@@ -1,17 +1,18 @@
-import React from 'react';
-import logo from './logo.svg';
+import React from 'react'
+
 import './App.css';
-import Footer from './components/footer'
-import Header from './components/header'
-import Profile from './components/profile'
-import Content from './containers/content'
+import Footer from './components/Footer'
+import Header from './components/Header'
+import ProfileMenu from './components/ProfileMenu'
+import Content from './containers/Content'
+
 
 class App extends React.Component {
   render() {
     return (
       <div className="App">
         <Header />
-        <Profile />
+        <ProfileMenu />
         <Content />
         <Footer />
       </div>
