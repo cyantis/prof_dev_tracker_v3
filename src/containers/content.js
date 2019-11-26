@@ -9,7 +9,6 @@ class Content extends React.Component {
   render() {
     return (
       <div className="Content">
-      Content Component
         <Router>
           <Route path="/home" component={Home} />
           <Route path="/learning" component={Learning} />
