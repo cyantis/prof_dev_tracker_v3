@@ -2,8 +2,8 @@ import React from 'react'
 import ReactDOM from 'react-dom'
 import { BrowserRouter as Router, Route } from 'react-router-dom'
 
-import Home from '../components/Home'
-import LearningProfile from '../components/LearningProfile'
+import Home from '../components/layoutComponents/Home'
+import LearningProfile from '../components/accountComponents/LearningProfile'
 import EventsContainer from './EventsContainer'
 
 class Content extends React.Component {

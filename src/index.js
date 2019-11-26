@@ -8,8 +8,8 @@ import thunk from 'redux-thunk'
 import './index.css';
 import App from './App';
 import rootReducer from './reducers/rootReducer'
-import Login from './components/Login'
-import CreateAccount from './components/CreateAccount'
+import Login from './components/accountComponents/Login'
+import CreateAccount from './components/accountComponents/CreateAccount'
 
 const composeEnhancer = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__;
 

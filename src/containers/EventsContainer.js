@@ -2,9 +2,9 @@ import React from 'react'
 import ReactDOM from 'react-dom'
 import { BrowserRouter as Router, Route } from 'react-router-dom'
 
-import LearningEvent from '../components/LearningEvent'
-import NewEvent from '../components/NewEvent'
-import EditEvent from '../components/EditEvent'
+import LearningEvent from '../components/learningEventComponents/LearningEvent'
+import NewEvent from '../components/learningEventComponents/NewEvent'
+import EditEvent from '../components/learningEventComponents/EditEvent'
 import CommentsContainer from './CommentsContainer'
 
 class EventsContainer extends React.Component {

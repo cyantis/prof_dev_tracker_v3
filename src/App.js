@@ -1,9 +1,9 @@
 import React from 'react'
 
 import './App.css';
-import Footer from './components/Footer'
-import Header from './components/Header'
-import ProfileMenu from './components/ProfileMenu'
+import Footer from './components/layoutComponents/Footer'
+import Header from './components/layoutComponents/Header'
+import ProfileMenu from './components/layoutComponents/ProfileMenu'
 import Content from './containers/Content'
 
 
