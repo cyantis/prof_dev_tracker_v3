@@ -3,7 +3,8 @@ import ReactDOM from 'react-dom'
 import { BrowserRouter as Router, Route } from 'react-router-dom'
 
 import Home from '../components/Home'
-import Learning from '../components/Learning'
+import LearningProfile from '../components/LearningProfile'
+import EventsContainer from './EventsContainer'
 
 class Content extends React.Component {
   render() {
@@ -11,8 +12,9 @@ class Content extends React.Component {
       <div className="Content">
         <Router>
           <Route path="/home" component={Home} />
-          <Route path="/learning" component={Learning} />
+          <Route path="/learning" component={LearningProfile} />
         </Router>
+        <EventsContainer />
       </div>
     );
   }

@@ -4,7 +4,7 @@ class CreateAccount extends React.Component {
   render() {
     return (
       <div className="CreateAccount">
-      CreateAccount Component
+        CreateAccount Component
       </div>
     );
   }
