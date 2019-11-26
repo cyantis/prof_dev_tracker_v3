@@ -5,6 +5,7 @@ import { BrowserRouter as Router, Route } from 'react-router-dom'
 import LearningEvent from '../components/LearningEvent'
 import NewEvent from '../components/NewEvent'
 import EditEvent from '../components/EditEvent'
+import CommentsContainer from './CommentsContainer'
 
 class EventsContainer extends React.Component {
   render() {
@@ -15,6 +16,7 @@ class EventsContainer extends React.Component {
           <Route path="/newEvent" component={NewEvent} />
           <Route path="/editEvent" component={EditEvent} />
         </Router>
+        <CommentsContainer />
       </div>
     );
   }
