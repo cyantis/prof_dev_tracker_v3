@@ -16,6 +16,8 @@ ActiveRecord::Schema.define(version: 2019_12_06_020446) do
     t.string "content"
     t.integer "employee_id"
     t.integer "event_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
   end
 
   create_table "employee_events", force: :cascade do |t|
@@ -23,6 +25,8 @@ ActiveRecord::Schema.define(version: 2019_12_06_020446) do
     t.integer "event_id"
     t.index ["employee_id"], name: "index_employee_events_on_employee_id"
     t.index ["event_id"], name: "index_employee_events_on_event_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
   end
 
   create_table "employees", force: :cascade do |t|
@@ -34,6 +38,8 @@ ActiveRecord::Schema.define(version: 2019_12_06_020446) do
     t.text "bio"
     t.integer "location_id"
     t.integer "manager_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
   end
 
   create_table "events", force: :cascade do |t|
@@ -42,13 +48,19 @@ ActiveRecord::Schema.define(version: 2019_12_06_020446) do
     t.string "category"
     t.text "description"
     t.boolean "shared", default: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
   end
 
   create_table "locations", force: :cascade do |t|
     t.string "name"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
   end
 
   create_table "sessions", force: :cascade do |t|
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
   end
 
 end

@@ -4,6 +4,8 @@ class CreateComments < ActiveRecord::Migration[5.2]
       t.string :content
       t.integer :employee_id
       t.integer :event_id
+
+      t.timestamps
     end
   end
 end

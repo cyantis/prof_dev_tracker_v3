@@ -9,6 +9,8 @@ class CreateEmployees < ActiveRecord::Migration[5.2]
       t.text :bio
       t.integer :location_id
       t.integer :manager_id
+
+      t.timestamps
     end
   end
 end

@@ -6,6 +6,8 @@ class CreateEvents < ActiveRecord::Migration[5.2]
       t.string :category
       t.text :description
       t.boolean :shared, default: false
+
+      t.timestamps
     end
   end
 end
