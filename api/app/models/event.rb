@@ -5,7 +5,7 @@ class Event < ApplicationRecord
 
   validates :name, :date, :category, :description, presence: true
 
-  scope :event_order, -> { select(:category).order(:category).distinct }
-  scope :recent_events, -> { order(updated_at: :desc).limit(10) }
+  #scope :event_order, -> { select(:category).order(:category).distinct }
+  #scope :recent_events, -> { order(updated_at: :desc).limit(10) }
 
 end
