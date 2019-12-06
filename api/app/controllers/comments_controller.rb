@@ -1,4 +1,8 @@
 class CommentsController < ApplicationController
+  def index
+    @comments = Comment.all
+    render json: @comments
+  end
 
   def new
     @comment = Comment.new
@@ -14,6 +18,11 @@ class CommentsController < ApplicationController
     else
       render :new
     end
+  end
+
+  def show
+    @comment = Comment.find(params[:id])
+    render json: @comment
   end
 
   def edit

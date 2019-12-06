@@ -23,7 +23,7 @@ class EventsController < ApplicationController
 
   def show
     @event = Event.find(params[:id])
-    #@employee = Employee.find(session[:user_id])
+    @employee = Employee.find(session[:user_id])
     render json: @event
   end
 
