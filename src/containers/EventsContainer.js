@@ -12,14 +12,15 @@ class EventsContainer extends React.Component {
     return (
       <div className="EventsContainer">
         <Router>
-          <Route path="/learningEvent" component={LearningEvent} />
-          <Route path="/newEvent" component={NewEvent} />
-          <Route path="/editEvent" component={EditEvent} />
+          <Route path="/events/new" component={NewEvent} />
         </Router>
         <CommentsContainer />
       </div>
     );
   }
 };
+
+//<Route path=`/events/${id}` component={LearningEvent} />
+//<Route path=`/events/${id}/edit` component={EditEvent} />
 
 export default EventsContainer

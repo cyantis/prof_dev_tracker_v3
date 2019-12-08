@@ -11,12 +11,13 @@ class CommentsContainer extends React.Component {
       <div className="CommentsContainer">
       CommentsContainer
         <Router>
-          <Route path="/newComment" component={NewComment} />
-          <Route path="/editComment" component={EditComment} />
+          <Route path="/comments/new" component={NewComment} />
         </Router>
       </div>
     );
   }
 };
+
+//<Route path=`/comment/${id}/edit` component={EditComment} />
 
 export default CommentsContainer
