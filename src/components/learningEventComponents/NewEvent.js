@@ -6,7 +6,7 @@ class NewEvent extends React.Component {
     date: '',
     category: '',
     description: '',
-    shared: '',
+    shared: false,
   }
 
   handleOnChange = event => {
@@ -47,7 +47,8 @@ class NewEvent extends React.Component {
             </p>
             <p>
               Learning Type
-              <select name="category" value={this.state.value} onChange={this.handleChange}>
+              <select name="category" onChange={event => this.handleOnChange(event)} value={this.state.category} required>
+                <option value="" disabled selected hidden>Choose a learning category</option>
                 <option value="Book">Book</option>
                 <option value="Conference Attendee">Conference Attendee</option>
                 <option value="Conference Presenter">Conference Presenter</option>
