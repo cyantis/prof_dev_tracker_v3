@@ -35,7 +35,7 @@ class NewEvent extends React.Component {
   render() {
     return (
       <div className="NewEvent">
-        <h1>Enter New Learning</h1>
+        <h2>Enter New Learning</h2>
           <form onSubmit={ event => this.handleOnSubmit(event) }>
             <p>
               Learning Title

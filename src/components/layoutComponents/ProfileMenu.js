@@ -4,7 +4,7 @@ class ProfileMenu extends React.Component {
   render() {
     return (
       <div className="ProfileMenu">
-        ProfileMenu Component
+        <h3>Your Profile</h3>
       </div>
     );
   }
