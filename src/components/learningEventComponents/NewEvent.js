@@ -21,7 +21,7 @@ class NewEvent extends React.Component {
 
   handleOnSubmit = event => {
     event.preventDefault()
-    this.props.addLearning(this.state)
+    this.props.addLearningEvent(this.state)
     this.setState({
       name: '',
       date: '',

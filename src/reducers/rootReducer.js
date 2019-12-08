@@ -4,7 +4,7 @@ import learningReducer from './learningReducer'
 import commentsReducer from './commentsReducer'
 
 const rootReducer = combineReducers({
-  learning: learningReducer,
+  events: learningReducer,
   comments: commentsReducer,
 });
 
