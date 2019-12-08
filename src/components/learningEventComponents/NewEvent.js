@@ -27,7 +27,7 @@ class NewEvent extends React.Component {
       date: '',
       category: '',
       description: '',
-      shared: '',
+      shared: false,
     })
   }
 
@@ -61,7 +61,7 @@ class NewEvent extends React.Component {
             </p>
             <p>
               Tell us about it
-              <input name="description" type="textarea" onChange={event => this.handleOnChange(event)} value={this.state.description}></input>
+              <textarea name="description" onChange={event => this.handleOnChange(event)} value={this.state.description}></textarea>
             </p>
             <p>
               Have you shared this with your team?
