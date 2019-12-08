@@ -1,13 +1,13 @@
 import React from 'react'
 
-class LearningProfile extends React.Component {
+class LearningLog extends React.Component {
   render() {
     return (
-      <div className="LearningProfile">
-        LearningProfile Component
+      <div className="LearningLog">
+        LearningLog Component
       </div>
     );
   }
 };
 
-export default LearningProfile
+export default LearningLog

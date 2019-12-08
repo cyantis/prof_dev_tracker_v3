@@ -6,7 +6,6 @@ import { connect } from 'react-redux'
 import LearningEvent from '../components/learningEventComponents/LearningEvent'
 import NewEvent from '../components/learningEventComponents/NewEvent'
 import EditEvent from '../components/learningEventComponents/EditEvent'
-import CommentsContainer from './CommentsContainer'
 
 class EventsContainer extends React.Component {
 
@@ -16,7 +15,6 @@ class EventsContainer extends React.Component {
         <Router>
           <Route path="/events/new" render={props => <NewEvent addLearningEvent={ this.props.addLearningEvent } />} />
         </Router>
-        <CommentsContainer />
       </div>
     );
   }
