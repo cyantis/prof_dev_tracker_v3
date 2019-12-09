@@ -1,18 +1,17 @@
 import React from 'react'
+import Button from './Button'
 
-class Header extends React.Component {
-  render() {
-    return (
-      <div className="Header">
-        <h1>Professional Development Tracker</h1>
-        <div className="Navigation">
-          <a href='/learning'><button>Your Learning Log</button></a>
-          <a href='/events/new'><button>Log New Learning</button></a>
-          <a href=''><button>Log Out</button></a>
-        </div>
+const Header = () => {
+  return (
+    <div className="Header">
+      <h1>Professional Development Tracker</h1>
+      <div className="Navigation">
+        <Button url='/learning' text='Your Learning Log' />
+        <Button url='/events/new' text='Log New Learning' />
+        <Button url='' text='Log Out' />
       </div>
-    );
-  }
-};
+    </div>
+  )
+}
 
 export default Header
