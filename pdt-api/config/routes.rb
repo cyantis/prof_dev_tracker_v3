@@ -1,17 +1,19 @@
 Rails.application.routes.draw do
-  resources :events do
-    resources :comments
+  scope 'api/v1/' do
+    resources :events do
+      resources :comments
+    end
+
+    resources :comments, only: [:index]
+
+    resources :employees do
+      resources :events
+    end
+
+    resources :locations
+
+    resource :sessions, only: [:new, :create, :destroy]
   end
 
-  resources :comments, only: [:index]
-
-  resources :employees do
-    resources :events
-  end
-
-  resources :locations
-
-  resource :sessions, only: [:new, :create, :destroy]
-
-  root 'locations#index'
+  #root 'locations#index'
 end
