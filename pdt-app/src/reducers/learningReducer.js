@@ -1,15 +1,15 @@
-import cuid from 'cuid';
-export const cuidFn = cuid;
+//import cuid from 'cuid'
+//export const cuidFn = cuid
 
 const learningReducer = (state = [], action) => {
 
   switch(action.type){
 
     case 'ADD_EVENT':
-      return [...state, { ...action.learning, id: cuid() }];
+      return [...action.learning]
 
     default:
-      return state;
+      return state
   }
 }
 

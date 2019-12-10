@@ -9,6 +9,17 @@ import NewEvent from '../components/learningEventComponents/NewEvent'
 import LearningEventList from '../components/learningEventComponents/LearningEventList'
 
 class Content extends React.Component {
+
+  async getEvents() {
+    const response = await fetch('/api/v1/events')
+    const data = await response.json()
+    this.props.addLearningEvent(data)
+  }
+
+  componentDidMount() {
+    this.getEvents()
+  }
+
   render() {
     return (
       <div className="Content">
