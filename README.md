@@ -17,6 +17,8 @@ Things you may want to cover:
 
 * How to run the test suite
 
+Launch the app with `heroku local -f Procfile.dev`
+
 * Services (job queues, cache servers, search engines, etc.)
 
 * Deployment instructions
