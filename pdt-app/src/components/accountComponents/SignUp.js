@@ -18,7 +18,7 @@ class Signup extends Component {
     password: "",
     email: "",
     name: "",
-    location_id: 1,
+    location_id: 2,
     manager_id: 1,
   }
 
