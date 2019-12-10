@@ -6,10 +6,13 @@ class Signup extends Component {
   state = {
     username: "",
     password: "",
-    bio: ""
+    email: "",
+    name: "",
+    location_id: "",
+    manager_id: "",
   }
 
-  handleChange = event => {
+  handleOnChange = event => {
     this.setState({
       [event.target.name]: event.target.value
     });
@@ -30,7 +33,7 @@ class Signup extends Component {
           name='username'
           placeholder='Username'
           value={this.state.username}
-          onChange={this.handleChange}
+          onChange={this.handleOnChange}
           /><br/>
 
         <label>Password</label>
@@ -39,26 +42,35 @@ class Signup extends Component {
           name='password'
           placeholder='Password'
           value={this.state.password}
-          onChange={this.handleChange}
+          onChange={this.handleOnChange}
           /><br/>
 
-        <label>Avatar</label>
+        <label>Your Real Name</label>
           <input
-            name='avatar'
-            placeholder='Avatar (URL)'
-            value={this.state.avatar}
-            onChange={this.handleChange}
+            name='name'
+            placeholder='Real Name'
+            value={this.state.name}
+            onChange={this.handleOnChange}
             /><br/>
 
-          <label>Bio</label>
-          <textarea
-            name='bio'
-            placeholder='Bio'
-            value={this.state.bio}
-            onChange={this.handleChange}
-            /><br/>
+          <label>Where do you work?</label>
+          <select name="location_id" onChange={event => this.handleOnChange(event)} value={this.state.location_id} required>
+            <option value="" disabled selected hidden>Choose a location</option>
+            <option value="1">Charlotte</option>
+            <option value="2">Denver</option>
+            <option value="3">Remote</option>
+          </select><br/>
 
-        <input type='submit'/>
+          <label>Who's Your Manager?</label>
+            <select name="manager_id" onChange={event => this.handleOnChange(event)} value={this.state.manager_id} required>
+              <option value="" disabled selected hidden>Pick Your Boss</option>
+              <option value="1">Chris Brown</option>
+              <option value="2">Faruq Rushdie</option>
+              <option value="3">Sarah  Abramov</option>
+              <option value="nil">I'm a manager</option>
+            </select><br/>
+
+          <input type='submit' value='SignUp!'/>
       </form>
     )
   }
