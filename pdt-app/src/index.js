@@ -21,10 +21,6 @@ const store = createStore(
 ReactDOM.render(
   <Provider store={store}>
     <App />
-    <Router>
-      <Route path="/login" component={Login} />
-      <Route path="/createAccount" component={CreateAccount} />
-    </Router>
   </Provider>,
   document.getElementById('root')
 );
