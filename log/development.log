@@ -13644,3 +13644,681 @@ puma (3.12.2) lib/puma/server.rb:476:in `process_client'
 puma (3.12.2) lib/puma/server.rb:334:in `block in run'
 puma (3.12.2) lib/puma/thread_pool.rb:135:in `block in spawn_thread'
   [1m[36mEmployee Load (0.1ms)[0m  [1m[34mSELECT  "employees".* FROM "employees" ORDER BY "employees"."id" DESC LIMIT ?[0m  [["LIMIT", 1]]
+Started GET "/api/v1/events" for 127.0.0.1 at 2019-12-10 16:00:37 -0700
+Started GET "/api/v1/employees" for 127.0.0.1 at 2019-12-10 16:00:37 -0700
+Processing by EventsController#index as */*
+  [1m[36mEvent Load (0.2ms)[0m  [1m[34mSELECT "events".* FROM "events"[0m
+  ↳ app/controllers/events_controller.rb:5
+Processing by EmployeesController#index as */*
+[active_model_serializers]   [1m[36mEmployee Load (1.4ms)[0m  [1m[34mSELECT "employees".* FROM "employees" INNER JOIN "employee_events" ON "employees"."id" = "employee_events"."employee_id" WHERE "employee_events"."event_id" = ?[0m  [["event_id", 1]]
+[active_model_serializers]   ↳ app/controllers/events_controller.rb:5
+  [1m[36mEmployee Load (0.2ms)[0m  [1m[34mSELECT "employees".* FROM "employees"[0m
+[active_model_serializers]   [1m[36mComment Load (0.2ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."event_id" = ?[0m  [["event_id", 1]]
+  ↳ app/controllers/employees_controller.rb:6
+[active_model_serializers]   [1m[36mEvent Load (0.2ms)[0m  [1m[34mSELECT "events".* FROM "events" INNER JOIN "employee_events" ON "events"."id" = "employee_events"."event_id" WHERE "employee_events"."employee_id" = ?[0m  [["employee_id", 1]]
+[active_model_serializers]   ↳ app/controllers/events_controller.rb:5
+[active_model_serializers]   [1m[36mEmployee Load (0.2ms)[0m  [1m[34mSELECT "employees".* FROM "employees" INNER JOIN "employee_events" ON "employees"."id" = "employee_events"."employee_id" WHERE "employee_events"."event_id" = ?[0m  [["event_id", 2]]
+[active_model_serializers]   ↳ app/controllers/events_controller.rb:5
+[active_model_serializers]   [1m[36mComment Load (0.1ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."event_id" = ?[0m  [["event_id", 2]]
+[active_model_serializers]   ↳ app/controllers/events_controller.rb:5
+[active_model_serializers]   [1m[36mEmployee Load (0.1ms)[0m  [1m[34mSELECT "employees".* FROM "employees" INNER JOIN "employee_events" ON "employees"."id" = "employee_events"."employee_id" WHERE "employee_events"."event_id" = ?[0m  [["event_id", 3]]
+[active_model_serializers]   ↳ app/controllers/events_controller.rb:5
+[active_model_serializers]   [1m[36mComment Load (0.1ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."event_id" = ?[0m  [["event_id", 3]]
+[active_model_serializers]   ↳ app/controllers/events_controller.rb:5
+[active_model_serializers]   ↳ app/controllers/employees_controller.rb:6
+[active_model_serializers]   [1m[36mEvent Load (0.1ms)[0m  [1m[34mSELECT "events".* FROM "events" INNER JOIN "employee_events" ON "events"."id" = "employee_events"."event_id" WHERE "employee_events"."employee_id" = ?[0m  [["employee_id", 2]]
+[active_model_serializers]   ↳ app/controllers/employees_controller.rb:6
+[active_model_serializers]   [1m[36mEvent Load (0.1ms)[0m  [1m[34mSELECT "events".* FROM "events" INNER JOIN "employee_events" ON "events"."id" = "employee_events"."event_id" WHERE "employee_events"."employee_id" = ?[0m  [["employee_id", 3]]
+[active_model_serializers]   ↳ app/controllers/employees_controller.rb:6
+[active_model_serializers]   [1m[36mEvent Load (0.2ms)[0m  [1m[34mSELECT "events".* FROM "events" INNER JOIN "employee_events" ON "events"."id" = "employee_events"."event_id" WHERE "employee_events"."employee_id" = ?[0m  [["employee_id", 4]]
+[active_model_serializers]   ↳ app/controllers/employees_controller.rb:6
+[active_model_serializers]   [1m[36mEvent Load (0.1ms)[0m  [1m[34mSELECT "events".* FROM "events" INNER JOIN "employee_events" ON "events"."id" = "employee_events"."event_id" WHERE "employee_events"."employee_id" = ?[0m  [["employee_id", 5]]
+[active_model_serializers]   ↳ app/controllers/employees_controller.rb:6
+[active_model_serializers]   [1m[36mEvent Load (0.1ms)[0m  [1m[34mSELECT "events".* FROM "events" INNER JOIN "employee_events" ON "events"."id" = "employee_events"."event_id" WHERE "employee_events"."employee_id" = ?[0m  [["employee_id", 6]]
+[active_model_serializers]   ↳ app/controllers/employees_controller.rb:6
+[active_model_serializers]   [1m[36mEvent Load (0.1ms)[0m  [1m[34mSELECT "events".* FROM "events" INNER JOIN "employee_events" ON "events"."id" = "employee_events"."event_id" WHERE "employee_events"."employee_id" = ?[0m  [["employee_id", 7]]
+[active_model_serializers]   ↳ app/controllers/employees_controller.rb:6
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (32.31ms)
+[active_model_serializers]   [1m[36mEmployee Load (0.1ms)[0m  [1m[34mSELECT "employees".* FROM "employees" INNER JOIN "employee_events" ON "employees"."id" = "employee_events"."employee_id" WHERE "employee_events"."event_id" = ?[0m  [["event_id", 4]]
+[active_model_serializers]   ↳ app/controllers/events_controller.rb:5
+Completed 200 OK in 43ms (Views: 41.6ms | ActiveRecord: 1.1ms)
+
+
+[active_model_serializers]   [1m[36mComment Load (0.2ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."event_id" = ?[0m  [["event_id", 4]]
+[active_model_serializers]   ↳ app/controllers/events_controller.rb:5
+[active_model_serializers]   [1m[36mEmployee Load (0.1ms)[0m  [1m[34mSELECT "employees".* FROM "employees" INNER JOIN "employee_events" ON "employees"."id" = "employee_events"."employee_id" WHERE "employee_events"."event_id" = ?[0m  [["event_id", 5]]
+[active_model_serializers]   ↳ app/controllers/events_controller.rb:5
+[active_model_serializers]   [1m[36mComment Load (0.1ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."event_id" = ?[0m  [["event_id", 5]]
+[active_model_serializers]   ↳ app/controllers/events_controller.rb:5
+[active_model_serializers]   [1m[36mEmployee Load (0.1ms)[0m  [1m[34mSELECT "employees".* FROM "employees" INNER JOIN "employee_events" ON "employees"."id" = "employee_events"."employee_id" WHERE "employee_events"."event_id" = ?[0m  [["event_id", 6]]
+[active_model_serializers]   ↳ app/controllers/events_controller.rb:5
+[active_model_serializers]   [1m[36mComment Load (0.1ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."event_id" = ?[0m  [["event_id", 6]]
+[active_model_serializers]   ↳ app/controllers/events_controller.rb:5
+[active_model_serializers] No serializer found for resource: #<Comment id: 2, content: "So, what the heck is it?", employee_id: 1, event_id: 6, created_at: "2019-12-06 02:58:13", updated_at: "2019-12-06 02:58:13">
+[active_model_serializers]   [1m[36mEmployee Load (0.1ms)[0m  [1m[34mSELECT "employees".* FROM "employees" INNER JOIN "employee_events" ON "employees"."id" = "employee_events"."employee_id" WHERE "employee_events"."event_id" = ?[0m  [["event_id", 7]]
+[active_model_serializers]   ↳ app/controllers/events_controller.rb:5
+[active_model_serializers]   [1m[36mComment Load (0.1ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."event_id" = ?[0m  [["event_id", 7]]
+[active_model_serializers]   ↳ app/controllers/events_controller.rb:5
+[active_model_serializers]   [1m[36mEmployee Load (0.2ms)[0m  [1m[34mSELECT "employees".* FROM "employees" INNER JOIN "employee_events" ON "employees"."id" = "employee_events"."employee_id" WHERE "employee_events"."event_id" = ?[0m  [["event_id", 8]]
+[active_model_serializers]   ↳ app/controllers/events_controller.rb:5
+[active_model_serializers]   [1m[36mComment Load (0.4ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."event_id" = ?[0m  [["event_id", 8]]
+[active_model_serializers]   ↳ app/controllers/events_controller.rb:5
+[active_model_serializers]   [1m[36mEmployee Load (0.1ms)[0m  [1m[34mSELECT "employees".* FROM "employees" INNER JOIN "employee_events" ON "employees"."id" = "employee_events"."employee_id" WHERE "employee_events"."event_id" = ?[0m  [["event_id", 9]]
+[active_model_serializers]   ↳ app/controllers/events_controller.rb:5
+[active_model_serializers]   [1m[36mComment Load (0.1ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."event_id" = ?[0m  [["event_id", 9]]
+[active_model_serializers]   ↳ app/controllers/events_controller.rb:5
+[active_model_serializers]   [1m[36mEmployee Load (0.1ms)[0m  [1m[34mSELECT "employees".* FROM "employees" INNER JOIN "employee_events" ON "employees"."id" = "employee_events"."employee_id" WHERE "employee_events"."event_id" = ?[0m  [["event_id", 10]]
+[active_model_serializers]   ↳ app/controllers/events_controller.rb:5
+[active_model_serializers]   [1m[36mComment Load (0.1ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."event_id" = ?[0m  [["event_id", 10]]
+[active_model_serializers]   ↳ app/controllers/events_controller.rb:5
+[active_model_serializers] No serializer found for resource: #<Comment id: 4, content: "Such a great book", employee_id: 3, event_id: 10, created_at: "2019-12-06 02:58:13", updated_at: "2019-12-06 02:58:13">
+[active_model_serializers]   [1m[36mEmployee Load (0.1ms)[0m  [1m[34mSELECT "employees".* FROM "employees" INNER JOIN "employee_events" ON "employees"."id" = "employee_events"."employee_id" WHERE "employee_events"."event_id" = ?[0m  [["event_id", 11]]
+[active_model_serializers]   ↳ app/controllers/events_controller.rb:5
+[active_model_serializers]   [1m[36mComment Load (0.1ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."event_id" = ?[0m  [["event_id", 11]]
+[active_model_serializers]   ↳ app/controllers/events_controller.rb:5
+[active_model_serializers]   [1m[36mEmployee Load (0.1ms)[0m  [1m[34mSELECT "employees".* FROM "employees" INNER JOIN "employee_events" ON "employees"."id" = "employee_events"."employee_id" WHERE "employee_events"."event_id" = ?[0m  [["event_id", 12]]
+[active_model_serializers]   ↳ app/controllers/events_controller.rb:5
+[active_model_serializers]   [1m[36mComment Load (0.1ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."event_id" = ?[0m  [["event_id", 12]]
+[active_model_serializers]   ↳ app/controllers/events_controller.rb:5
+[active_model_serializers] No serializer found for resource: #<Comment id: 1, content: "How was the pizza?", employee_id: 1, event_id: 12, created_at: "2019-12-06 02:58:13", updated_at: "2019-12-06 02:58:13">
+[active_model_serializers] No serializer found for resource: #<Comment id: 2, content: "So, what the heck is it?", employee_id: 1, event_id: 6, created_at: "2019-12-06 02:58:13", updated_at: "2019-12-06 02:58:13">
+[active_model_serializers] No serializer found for resource: #<Comment id: 4, content: "Such a great book", employee_id: 3, event_id: 10, created_at: "2019-12-06 02:58:13", updated_at: "2019-12-06 02:58:13">
+[active_model_serializers] No serializer found for resource: #<Comment id: 1, content: "How was the pizza?", employee_id: 1, event_id: 12, created_at: "2019-12-06 02:58:13", updated_at: "2019-12-06 02:58:13">
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (125.1ms)
+Completed 200 OK in 127ms (Views: 122.2ms | ActiveRecord: 4.8ms)
+
+
+Started POST "/api/v1/employees" for 127.0.0.1 at 2019-12-10 16:00:48 -0700
+Processing by EmployeesController#create as JSON
+  Parameters: {"employee"=>{}}
+Completed 400 Bad Request in 0ms (ActiveRecord: 0.0ms)
+
+
+  
+ActionController::ParameterMissing (param is missing or the value is empty: employee):
+  
+app/controllers/employees_controller.rb:51:in `employee_params'
+app/controllers/employees_controller.rb:14:in `create'
+Started GET "/signup" for 127.0.0.1 at 2019-12-10 16:00:48 -0700
+  
+ActionController::RoutingError (No route matches [GET] "/signup"):
+  
+actionpack (5.2.4) lib/action_dispatch/middleware/debug_exceptions.rb:65:in `call'
+actionpack (5.2.4) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (5.2.4) lib/rails/rack/logger.rb:38:in `call_app'
+railties (5.2.4) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (5.2.4) lib/active_support/tagged_logging.rb:71:in `block in tagged'
+activesupport (5.2.4) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (5.2.4) lib/active_support/tagged_logging.rb:71:in `tagged'
+railties (5.2.4) lib/rails/rack/logger.rb:26:in `call'
+actionpack (5.2.4) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (5.2.4) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.0.7) lib/rack/runtime.rb:22:in `call'
+activesupport (5.2.4) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (5.2.4) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.4) lib/action_dispatch/middleware/static.rb:127:in `call'
+rack (2.0.7) lib/rack/sendfile.rb:111:in `call'
+rack-cors (1.1.0) lib/rack/cors.rb:100:in `call'
+railties (5.2.4) lib/rails/engine.rb:524:in `call'
+puma (3.12.2) lib/puma/configuration.rb:227:in `call'
+puma (3.12.2) lib/puma/server.rb:674:in `handle_request'
+puma (3.12.2) lib/puma/server.rb:476:in `process_client'
+puma (3.12.2) lib/puma/server.rb:334:in `block in run'
+puma (3.12.2) lib/puma/thread_pool.rb:135:in `block in spawn_thread'
+Started GET "/api/v1/events" for 127.0.0.1 at 2019-12-10 16:01:09 -0700
+Started GET "/api/v1/employees" for 127.0.0.1 at 2019-12-10 16:01:09 -0700
+Processing by EmployeesController#index as */*
+Processing by EventsController#index as */*
+  [1m[36mEvent Load (0.2ms)[0m  [1m[34mSELECT "events".* FROM "events"[0m
+  ↳ app/controllers/events_controller.rb:5
+  [1m[36mEmployee Load (0.5ms)[0m  [1m[34mSELECT "employees".* FROM "employees"[0m
+[active_model_serializers]   [1m[36mEmployee Load (0.2ms)[0m  [1m[34mSELECT "employees".* FROM "employees" INNER JOIN "employee_events" ON "employees"."id" = "employee_events"."employee_id" WHERE "employee_events"."event_id" = ?[0m  [["event_id", 1]]
+  ↳ app/controllers/employees_controller.rb:6
+[active_model_serializers]   ↳ app/controllers/events_controller.rb:5
+[active_model_serializers]   [1m[36mEvent Load (0.2ms)[0m  [1m[34mSELECT "events".* FROM "events" INNER JOIN "employee_events" ON "events"."id" = "employee_events"."event_id" WHERE "employee_events"."employee_id" = ?[0m  [["employee_id", 1]]
+[active_model_serializers]   ↳ app/controllers/employees_controller.rb:6
+[active_model_serializers]   [1m[36mComment Load (0.2ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."event_id" = ?[0m  [["event_id", 1]]
+[active_model_serializers]   ↳ app/controllers/events_controller.rb:5
+[active_model_serializers]   [1m[36mEmployee Load (0.1ms)[0m  [1m[34mSELECT "employees".* FROM "employees" INNER JOIN "employee_events" ON "employees"."id" = "employee_events"."employee_id" WHERE "employee_events"."event_id" = ?[0m  [["event_id", 2]]
+[active_model_serializers]   ↳ app/controllers/events_controller.rb:5
+[active_model_serializers]   [1m[36mComment Load (0.1ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."event_id" = ?[0m  [["event_id", 2]]
+[active_model_serializers]   ↳ app/controllers/events_controller.rb:5
+[active_model_serializers]   [1m[36mEmployee Load (0.1ms)[0m  [1m[34mSELECT "employees".* FROM "employees" INNER JOIN "employee_events" ON "employees"."id" = "employee_events"."employee_id" WHERE "employee_events"."event_id" = ?[0m  [["event_id", 3]]
+[active_model_serializers]   ↳ app/controllers/events_controller.rb:5
+[active_model_serializers]   [1m[36mEvent Load (0.1ms)[0m  [1m[34mSELECT "events".* FROM "events" INNER JOIN "employee_events" ON "events"."id" = "employee_events"."event_id" WHERE "employee_events"."employee_id" = ?[0m  [["employee_id", 2]]
+[active_model_serializers]   ↳ app/controllers/employees_controller.rb:6
+[active_model_serializers]   [1m[36mEvent Load (0.2ms)[0m  [1m[34mSELECT "events".* FROM "events" INNER JOIN "employee_events" ON "events"."id" = "employee_events"."event_id" WHERE "employee_events"."employee_id" = ?[0m  [["employee_id", 3]]
+[active_model_serializers]   ↳ app/controllers/employees_controller.rb:6
+[active_model_serializers]   [1m[36mEvent Load (0.1ms)[0m  [1m[34mSELECT "events".* FROM "events" INNER JOIN "employee_events" ON "events"."id" = "employee_events"."event_id" WHERE "employee_events"."employee_id" = ?[0m  [["employee_id", 4]]
+[active_model_serializers]   [1m[36mComment Load (0.1ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."event_id" = ?[0m  [["event_id", 3]]
+[active_model_serializers]   ↳ app/controllers/events_controller.rb:5
+[active_model_serializers]   [1m[36mEmployee Load (0.1ms)[0m  [1m[34mSELECT "employees".* FROM "employees" INNER JOIN "employee_events" ON "employees"."id" = "employee_events"."employee_id" WHERE "employee_events"."event_id" = ?[0m  [["event_id", 4]]
+[active_model_serializers]   ↳ app/controllers/events_controller.rb:5
+[active_model_serializers]   ↳ app/controllers/employees_controller.rb:6
+[active_model_serializers]   [1m[36mEvent Load (0.1ms)[0m  [1m[34mSELECT "events".* FROM "events" INNER JOIN "employee_events" ON "events"."id" = "employee_events"."event_id" WHERE "employee_events"."employee_id" = ?[0m  [["employee_id", 5]]
+[active_model_serializers]   ↳ app/controllers/employees_controller.rb:6
+[active_model_serializers]   [1m[36mEvent Load (0.1ms)[0m  [1m[34mSELECT "events".* FROM "events" INNER JOIN "employee_events" ON "events"."id" = "employee_events"."event_id" WHERE "employee_events"."employee_id" = ?[0m  [["employee_id", 6]]
+[active_model_serializers]   ↳ app/controllers/employees_controller.rb:6
+[active_model_serializers]   [1m[36mEvent Load (0.1ms)[0m  [1m[34mSELECT "events".* FROM "events" INNER JOIN "employee_events" ON "events"."id" = "employee_events"."event_id" WHERE "employee_events"."employee_id" = ?[0m  [["employee_id", 7]]
+[active_model_serializers]   ↳ app/controllers/employees_controller.rb:6
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (32.27ms)
+Completed 200 OK in 38ms (Views: 36.1ms | ActiveRecord: 1.5ms)
+
+
+[active_model_serializers]   [1m[36mComment Load (0.1ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."event_id" = ?[0m  [["event_id", 4]]
+[active_model_serializers]   ↳ app/controllers/events_controller.rb:5
+[active_model_serializers]   [1m[36mEmployee Load (0.1ms)[0m  [1m[34mSELECT "employees".* FROM "employees" INNER JOIN "employee_events" ON "employees"."id" = "employee_events"."employee_id" WHERE "employee_events"."event_id" = ?[0m  [["event_id", 5]]
+[active_model_serializers]   ↳ app/controllers/events_controller.rb:5
+[active_model_serializers]   [1m[36mComment Load (0.1ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."event_id" = ?[0m  [["event_id", 5]]
+[active_model_serializers]   ↳ app/controllers/events_controller.rb:5
+[active_model_serializers]   [1m[36mEmployee Load (0.1ms)[0m  [1m[34mSELECT "employees".* FROM "employees" INNER JOIN "employee_events" ON "employees"."id" = "employee_events"."employee_id" WHERE "employee_events"."event_id" = ?[0m  [["event_id", 6]]
+[active_model_serializers]   ↳ app/controllers/events_controller.rb:5
+[active_model_serializers]   [1m[36mComment Load (0.1ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."event_id" = ?[0m  [["event_id", 6]]
+[active_model_serializers]   ↳ app/controllers/events_controller.rb:5
+[active_model_serializers] No serializer found for resource: #<Comment id: 2, content: "So, what the heck is it?", employee_id: 1, event_id: 6, created_at: "2019-12-06 02:58:13", updated_at: "2019-12-06 02:58:13">
+[active_model_serializers]   [1m[36mEmployee Load (0.1ms)[0m  [1m[34mSELECT "employees".* FROM "employees" INNER JOIN "employee_events" ON "employees"."id" = "employee_events"."employee_id" WHERE "employee_events"."event_id" = ?[0m  [["event_id", 7]]
+[active_model_serializers]   ↳ app/controllers/events_controller.rb:5
+[active_model_serializers]   [1m[36mComment Load (0.1ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."event_id" = ?[0m  [["event_id", 7]]
+[active_model_serializers]   ↳ app/controllers/events_controller.rb:5
+[active_model_serializers]   [1m[36mEmployee Load (0.1ms)[0m  [1m[34mSELECT "employees".* FROM "employees" INNER JOIN "employee_events" ON "employees"."id" = "employee_events"."employee_id" WHERE "employee_events"."event_id" = ?[0m  [["event_id", 8]]
+[active_model_serializers]   ↳ app/controllers/events_controller.rb:5
+[active_model_serializers]   [1m[36mComment Load (0.2ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."event_id" = ?[0m  [["event_id", 8]]
+[active_model_serializers]   ↳ app/controllers/events_controller.rb:5
+[active_model_serializers]   [1m[36mEmployee Load (0.1ms)[0m  [1m[34mSELECT "employees".* FROM "employees" INNER JOIN "employee_events" ON "employees"."id" = "employee_events"."employee_id" WHERE "employee_events"."event_id" = ?[0m  [["event_id", 9]]
+[active_model_serializers]   ↳ app/controllers/events_controller.rb:5
+[active_model_serializers]   [1m[36mComment Load (0.1ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."event_id" = ?[0m  [["event_id", 9]]
+[active_model_serializers]   ↳ app/controllers/events_controller.rb:5
+[active_model_serializers]   [1m[36mEmployee Load (0.1ms)[0m  [1m[34mSELECT "employees".* FROM "employees" INNER JOIN "employee_events" ON "employees"."id" = "employee_events"."employee_id" WHERE "employee_events"."event_id" = ?[0m  [["event_id", 10]]
+[active_model_serializers]   ↳ app/controllers/events_controller.rb:5
+[active_model_serializers]   [1m[36mComment Load (0.2ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."event_id" = ?[0m  [["event_id", 10]]
+[active_model_serializers]   ↳ app/controllers/events_controller.rb:5
+[active_model_serializers] No serializer found for resource: #<Comment id: 4, content: "Such a great book", employee_id: 3, event_id: 10, created_at: "2019-12-06 02:58:13", updated_at: "2019-12-06 02:58:13">
+[active_model_serializers]   [1m[36mEmployee Load (0.1ms)[0m  [1m[34mSELECT "employees".* FROM "employees" INNER JOIN "employee_events" ON "employees"."id" = "employee_events"."employee_id" WHERE "employee_events"."event_id" = ?[0m  [["event_id", 11]]
+[active_model_serializers]   ↳ app/controllers/events_controller.rb:5
+[active_model_serializers]   [1m[36mComment Load (0.1ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."event_id" = ?[0m  [["event_id", 11]]
+[active_model_serializers]   ↳ app/controllers/events_controller.rb:5
+[active_model_serializers]   [1m[36mEmployee Load (0.1ms)[0m  [1m[34mSELECT "employees".* FROM "employees" INNER JOIN "employee_events" ON "employees"."id" = "employee_events"."employee_id" WHERE "employee_events"."event_id" = ?[0m  [["event_id", 12]]
+[active_model_serializers]   ↳ app/controllers/events_controller.rb:5
+[active_model_serializers]   [1m[36mComment Load (0.1ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."event_id" = ?[0m  [["event_id", 12]]
+[active_model_serializers]   ↳ app/controllers/events_controller.rb:5
+[active_model_serializers] No serializer found for resource: #<Comment id: 1, content: "How was the pizza?", employee_id: 1, event_id: 12, created_at: "2019-12-06 02:58:13", updated_at: "2019-12-06 02:58:13">
+[active_model_serializers] No serializer found for resource: #<Comment id: 2, content: "So, what the heck is it?", employee_id: 1, event_id: 6, created_at: "2019-12-06 02:58:13", updated_at: "2019-12-06 02:58:13">
+[active_model_serializers] No serializer found for resource: #<Comment id: 4, content: "Such a great book", employee_id: 3, event_id: 10, created_at: "2019-12-06 02:58:13", updated_at: "2019-12-06 02:58:13">
+[active_model_serializers] No serializer found for resource: #<Comment id: 1, content: "How was the pizza?", employee_id: 1, event_id: 12, created_at: "2019-12-06 02:58:13", updated_at: "2019-12-06 02:58:13">
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (133.24ms)
+Completed 200 OK in 135ms (Views: 131.3ms | ActiveRecord: 3.2ms)
+
+
+Started GET "/api/v1/events" for 127.0.0.1 at 2019-12-10 16:23:20 -0700
+Processing by EventsController#index as */*
+  [1m[36mEvent Load (1.8ms)[0m  [1m[34mSELECT "events".* FROM "events"[0m
+  ↳ app/controllers/events_controller.rb:5
+[active_model_serializers]   [1m[36mEmployee Load (1.3ms)[0m  [1m[34mSELECT "employees".* FROM "employees" INNER JOIN "employee_events" ON "employees"."id" = "employee_events"."employee_id" WHERE "employee_events"."event_id" = ?[0m  [["event_id", 1]]
+[active_model_serializers]   ↳ app/controllers/events_controller.rb:5
+Started GET "/api/v1/employees" for 127.0.0.1 at 2019-12-10 16:23:20 -0700
+[active_model_serializers]   [1m[36mComment Load (0.5ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."event_id" = ?[0m  [["event_id", 1]]
+Processing by EmployeesController#index as */*
+  [1m[36mEmployee Load (0.2ms)[0m  [1m[34mSELECT "employees".* FROM "employees"[0m
+  ↳ app/controllers/employees_controller.rb:6
+[active_model_serializers]   [1m[36mEvent Load (0.4ms)[0m  [1m[34mSELECT "events".* FROM "events" INNER JOIN "employee_events" ON "events"."id" = "employee_events"."event_id" WHERE "employee_events"."employee_id" = ?[0m  [["employee_id", 1]]
+[active_model_serializers]   ↳ app/controllers/employees_controller.rb:6
+[active_model_serializers]   [1m[36mEvent Load (0.1ms)[0m  [1m[34mSELECT "events".* FROM "events" INNER JOIN "employee_events" ON "events"."id" = "employee_events"."event_id" WHERE "employee_events"."employee_id" = ?[0m  [["employee_id", 2]]
+[active_model_serializers]   ↳ app/controllers/employees_controller.rb:6
+[active_model_serializers]   [1m[36mEvent Load (0.1ms)[0m  [1m[34mSELECT "events".* FROM "events" INNER JOIN "employee_events" ON "events"."id" = "employee_events"."event_id" WHERE "employee_events"."employee_id" = ?[0m  [["employee_id", 3]]
+[active_model_serializers]   ↳ app/controllers/employees_controller.rb:6
+[active_model_serializers]   ↳ app/controllers/events_controller.rb:5
+[active_model_serializers]   [1m[36mEmployee Load (0.1ms)[0m  [1m[34mSELECT "employees".* FROM "employees" INNER JOIN "employee_events" ON "employees"."id" = "employee_events"."employee_id" WHERE "employee_events"."event_id" = ?[0m  [["event_id", 2]]
+[active_model_serializers]   ↳ app/controllers/events_controller.rb:5
+[active_model_serializers]   [1m[36mEvent Load (0.1ms)[0m  [1m[34mSELECT "events".* FROM "events" INNER JOIN "employee_events" ON "events"."id" = "employee_events"."event_id" WHERE "employee_events"."employee_id" = ?[0m  [["employee_id", 4]]
+[active_model_serializers]   ↳ app/controllers/employees_controller.rb:6
+[active_model_serializers]   [1m[36mEvent Load (0.1ms)[0m  [1m[34mSELECT "events".* FROM "events" INNER JOIN "employee_events" ON "events"."id" = "employee_events"."event_id" WHERE "employee_events"."employee_id" = ?[0m  [["employee_id", 5]]
+[active_model_serializers]   ↳ app/controllers/employees_controller.rb:6
+[active_model_serializers]   [1m[36mEvent Load (0.1ms)[0m  [1m[34mSELECT "events".* FROM "events" INNER JOIN "employee_events" ON "events"."id" = "employee_events"."event_id" WHERE "employee_events"."employee_id" = ?[0m  [["employee_id", 6]]
+[active_model_serializers]   ↳ app/controllers/employees_controller.rb:6
+[active_model_serializers]   [1m[36mEvent Load (0.1ms)[0m  [1m[34mSELECT "events".* FROM "events" INNER JOIN "employee_events" ON "events"."id" = "employee_events"."event_id" WHERE "employee_events"."employee_id" = ?[0m  [["employee_id", 7]]
+[active_model_serializers]   [1m[36mComment Load (0.1ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."event_id" = ?[0m  [["event_id", 2]]
+[active_model_serializers]   ↳ app/controllers/events_controller.rb:5
+[active_model_serializers]   [1m[36mEmployee Load (0.1ms)[0m  [1m[34mSELECT "employees".* FROM "employees" INNER JOIN "employee_events" ON "employees"."id" = "employee_events"."employee_id" WHERE "employee_events"."event_id" = ?[0m  [["event_id", 3]]
+[active_model_serializers]   ↳ app/controllers/events_controller.rb:5
+[active_model_serializers]   [1m[36mComment Load (0.1ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."event_id" = ?[0m  [["event_id", 3]]
+[active_model_serializers]   ↳ app/controllers/events_controller.rb:5
+[active_model_serializers]   [1m[36mEmployee Load (3.3ms)[0m  [1m[34mSELECT "employees".* FROM "employees" INNER JOIN "employee_events" ON "employees"."id" = "employee_events"."employee_id" WHERE "employee_events"."event_id" = ?[0m  [["event_id", 4]]
+[active_model_serializers]   ↳ app/controllers/events_controller.rb:5
+[active_model_serializers]   [1m[36mComment Load (0.1ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."event_id" = ?[0m  [["event_id", 4]]
+[active_model_serializers]   ↳ app/controllers/events_controller.rb:5
+[active_model_serializers]   [1m[36mEmployee Load (0.1ms)[0m  [1m[34mSELECT "employees".* FROM "employees" INNER JOIN "employee_events" ON "employees"."id" = "employee_events"."employee_id" WHERE "employee_events"."event_id" = ?[0m  [["event_id", 5]]
+[active_model_serializers]   ↳ app/controllers/events_controller.rb:5
+[active_model_serializers]   [1m[36mComment Load (0.1ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."event_id" = ?[0m  [["event_id", 5]]
+[active_model_serializers]   ↳ app/controllers/events_controller.rb:5
+[active_model_serializers]   [1m[36mEmployee Load (0.1ms)[0m  [1m[34mSELECT "employees".* FROM "employees" INNER JOIN "employee_events" ON "employees"."id" = "employee_events"."employee_id" WHERE "employee_events"."event_id" = ?[0m  [["event_id", 6]]
+[active_model_serializers]   ↳ app/controllers/events_controller.rb:5
+[active_model_serializers]   [1m[36mComment Load (0.1ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."event_id" = ?[0m  [["event_id", 6]]
+[active_model_serializers]   ↳ app/controllers/events_controller.rb:5
+[active_model_serializers] No serializer found for resource: #<Comment id: 2, content: "So, what the heck is it?", employee_id: 1, event_id: 6, created_at: "2019-12-06 02:58:13", updated_at: "2019-12-06 02:58:13">
+[active_model_serializers]   ↳ app/controllers/employees_controller.rb:6
+[active_model_serializers]   [1m[36mEmployee Load (0.1ms)[0m  [1m[34mSELECT "employees".* FROM "employees" INNER JOIN "employee_events" ON "employees"."id" = "employee_events"."employee_id" WHERE "employee_events"."event_id" = ?[0m  [["event_id", 7]]
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (55.46ms)
+[active_model_serializers]   ↳ app/controllers/events_controller.rb:5
+Completed 200 OK in 61ms (Views: 59.5ms | ActiveRecord: 1.3ms)
+
+
+[active_model_serializers]   [1m[36mComment Load (0.1ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."event_id" = ?[0m  [["event_id", 7]]
+[active_model_serializers]   ↳ app/controllers/events_controller.rb:5
+[active_model_serializers]   [1m[36mEmployee Load (0.1ms)[0m  [1m[34mSELECT "employees".* FROM "employees" INNER JOIN "employee_events" ON "employees"."id" = "employee_events"."employee_id" WHERE "employee_events"."event_id" = ?[0m  [["event_id", 8]]
+[active_model_serializers]   ↳ app/controllers/events_controller.rb:5
+[active_model_serializers]   [1m[36mComment Load (0.1ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."event_id" = ?[0m  [["event_id", 8]]
+[active_model_serializers]   ↳ app/controllers/events_controller.rb:5
+[active_model_serializers]   [1m[36mEmployee Load (0.1ms)[0m  [1m[34mSELECT "employees".* FROM "employees" INNER JOIN "employee_events" ON "employees"."id" = "employee_events"."employee_id" WHERE "employee_events"."event_id" = ?[0m  [["event_id", 9]]
+[active_model_serializers]   ↳ app/controllers/events_controller.rb:5
+[active_model_serializers]   [1m[36mComment Load (0.1ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."event_id" = ?[0m  [["event_id", 9]]
+[active_model_serializers]   ↳ app/controllers/events_controller.rb:5
+[active_model_serializers]   [1m[36mEmployee Load (0.1ms)[0m  [1m[34mSELECT "employees".* FROM "employees" INNER JOIN "employee_events" ON "employees"."id" = "employee_events"."employee_id" WHERE "employee_events"."event_id" = ?[0m  [["event_id", 10]]
+[active_model_serializers]   ↳ app/controllers/events_controller.rb:5
+[active_model_serializers]   [1m[36mComment Load (0.1ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."event_id" = ?[0m  [["event_id", 10]]
+[active_model_serializers]   ↳ app/controllers/events_controller.rb:5
+[active_model_serializers] No serializer found for resource: #<Comment id: 4, content: "Such a great book", employee_id: 3, event_id: 10, created_at: "2019-12-06 02:58:13", updated_at: "2019-12-06 02:58:13">
+[active_model_serializers]   [1m[36mEmployee Load (0.1ms)[0m  [1m[34mSELECT "employees".* FROM "employees" INNER JOIN "employee_events" ON "employees"."id" = "employee_events"."employee_id" WHERE "employee_events"."event_id" = ?[0m  [["event_id", 11]]
+[active_model_serializers]   ↳ app/controllers/events_controller.rb:5
+[active_model_serializers]   [1m[36mComment Load (2.2ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."event_id" = ?[0m  [["event_id", 11]]
+[active_model_serializers]   ↳ app/controllers/events_controller.rb:5
+[active_model_serializers]   [1m[36mEmployee Load (1.1ms)[0m  [1m[34mSELECT "employees".* FROM "employees" INNER JOIN "employee_events" ON "employees"."id" = "employee_events"."employee_id" WHERE "employee_events"."event_id" = ?[0m  [["event_id", 12]]
+[active_model_serializers]   ↳ app/controllers/events_controller.rb:5
+[active_model_serializers]   [1m[36mComment Load (0.2ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."event_id" = ?[0m  [["event_id", 12]]
+[active_model_serializers]   ↳ app/controllers/events_controller.rb:5
+[active_model_serializers] No serializer found for resource: #<Comment id: 1, content: "How was the pizza?", employee_id: 1, event_id: 12, created_at: "2019-12-06 02:58:13", updated_at: "2019-12-06 02:58:13">
+[active_model_serializers] No serializer found for resource: #<Comment id: 2, content: "So, what the heck is it?", employee_id: 1, event_id: 6, created_at: "2019-12-06 02:58:13", updated_at: "2019-12-06 02:58:13">
+[active_model_serializers] No serializer found for resource: #<Comment id: 4, content: "Such a great book", employee_id: 3, event_id: 10, created_at: "2019-12-06 02:58:13", updated_at: "2019-12-06 02:58:13">
+[active_model_serializers] No serializer found for resource: #<Comment id: 1, content: "How was the pizza?", employee_id: 1, event_id: 12, created_at: "2019-12-06 02:58:13", updated_at: "2019-12-06 02:58:13">
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (128.04ms)
+Completed 200 OK in 139ms (Views: 122.4ms | ActiveRecord: 12.3ms)
+
+
+Started POST "/api/v1/employees" for 127.0.0.1 at 2019-12-10 16:23:27 -0700
+Processing by EmployeesController#create as JSON
+  Parameters: {"user"=>{"username"=>"rstrst", "password"=>"[FILTERED]", "email"=>"rastrast", "name"=>"arstrast", "location_id"=>2, "manager_id"=>1}, "employee"=>{}}
+Completed 400 Bad Request in 0ms (ActiveRecord: 0.0ms)
+
+
+  
+ActionController::ParameterMissing (param is missing or the value is empty: employee):
+  
+app/controllers/employees_controller.rb:51:in `employee_params'
+app/controllers/employees_controller.rb:14:in `create'
+Started GET "/signup" for 127.0.0.1 at 2019-12-10 16:23:27 -0700
+  
+ActionController::RoutingError (No route matches [GET] "/signup"):
+  
+actionpack (5.2.4) lib/action_dispatch/middleware/debug_exceptions.rb:65:in `call'
+actionpack (5.2.4) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (5.2.4) lib/rails/rack/logger.rb:38:in `call_app'
+railties (5.2.4) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (5.2.4) lib/active_support/tagged_logging.rb:71:in `block in tagged'
+activesupport (5.2.4) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (5.2.4) lib/active_support/tagged_logging.rb:71:in `tagged'
+railties (5.2.4) lib/rails/rack/logger.rb:26:in `call'
+actionpack (5.2.4) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (5.2.4) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.0.7) lib/rack/runtime.rb:22:in `call'
+activesupport (5.2.4) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (5.2.4) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.4) lib/action_dispatch/middleware/static.rb:127:in `call'
+rack (2.0.7) lib/rack/sendfile.rb:111:in `call'
+rack-cors (1.1.0) lib/rack/cors.rb:100:in `call'
+railties (5.2.4) lib/rails/engine.rb:524:in `call'
+puma (3.12.2) lib/puma/configuration.rb:227:in `call'
+puma (3.12.2) lib/puma/server.rb:674:in `handle_request'
+puma (3.12.2) lib/puma/server.rb:476:in `process_client'
+puma (3.12.2) lib/puma/server.rb:334:in `block in run'
+puma (3.12.2) lib/puma/thread_pool.rb:135:in `block in spawn_thread'
+  [1m[36mEmployee Load (1.1ms)[0m  [1m[34mSELECT  "employees".* FROM "employees" LIMIT ?[0m  [["LIMIT", 11]]
+Started GET "/api/v1/events" for 127.0.0.1 at 2019-12-10 17:08:27 -0700
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /Users/cyantis/.rvm/gems/ruby-2.6.1/gems/activerecord-5.2.4/lib/active_record/log_subscriber.rb:98
+Processing by EventsController#index as */*
+  [1m[36mEvent Load (0.2ms)[0m  [1m[34mSELECT "events".* FROM "events"[0m
+  ↳ app/controllers/events_controller.rb:5
+[active_model_serializers]   [1m[36mEmployee Load (0.2ms)[0m  [1m[34mSELECT "employees".* FROM "employees" INNER JOIN "employee_events" ON "employees"."id" = "employee_events"."employee_id" WHERE "employee_events"."event_id" = ?[0m  [["event_id", 1]]
+[active_model_serializers]   ↳ app/controllers/events_controller.rb:5
+[active_model_serializers]   [1m[36mComment Load (0.1ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."event_id" = ?[0m  [["event_id", 1]]
+[active_model_serializers]   ↳ app/controllers/events_controller.rb:5
+[active_model_serializers]   [1m[36mEmployee Load (0.1ms)[0m  [1m[34mSELECT "employees".* FROM "employees" INNER JOIN "employee_events" ON "employees"."id" = "employee_events"."employee_id" WHERE "employee_events"."event_id" = ?[0m  [["event_id", 2]]
+[active_model_serializers]   ↳ app/controllers/events_controller.rb:5
+[active_model_serializers]   [1m[36mComment Load (0.1ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."event_id" = ?[0m  [["event_id", 2]]
+[active_model_serializers]   ↳ app/controllers/events_controller.rb:5
+[active_model_serializers]   [1m[36mEmployee Load (0.1ms)[0m  [1m[34mSELECT "employees".* FROM "employees" INNER JOIN "employee_events" ON "employees"."id" = "employee_events"."employee_id" WHERE "employee_events"."event_id" = ?[0m  [["event_id", 3]]
+[active_model_serializers]   ↳ app/controllers/events_controller.rb:5
+[active_model_serializers]   [1m[36mComment Load (0.1ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."event_id" = ?[0m  [["event_id", 3]]
+[active_model_serializers]   ↳ app/controllers/events_controller.rb:5
+[active_model_serializers]   [1m[36mEmployee Load (0.1ms)[0m  [1m[34mSELECT "employees".* FROM "employees" INNER JOIN "employee_events" ON "employees"."id" = "employee_events"."employee_id" WHERE "employee_events"."event_id" = ?[0m  [["event_id", 4]]
+[active_model_serializers]   ↳ app/controllers/events_controller.rb:5
+[active_model_serializers]   [1m[36mComment Load (0.1ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."event_id" = ?[0m  [["event_id", 4]]
+[active_model_serializers]   ↳ app/controllers/events_controller.rb:5
+[active_model_serializers]   [1m[36mEmployee Load (0.1ms)[0m  [1m[34mSELECT "employees".* FROM "employees" INNER JOIN "employee_events" ON "employees"."id" = "employee_events"."employee_id" WHERE "employee_events"."event_id" = ?[0m  [["event_id", 5]]
+[active_model_serializers]   ↳ app/controllers/events_controller.rb:5
+[active_model_serializers]   [1m[36mComment Load (0.1ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."event_id" = ?[0m  [["event_id", 5]]
+[active_model_serializers]   ↳ app/controllers/events_controller.rb:5
+[active_model_serializers]   [1m[36mEmployee Load (0.1ms)[0m  [1m[34mSELECT "employees".* FROM "employees" INNER JOIN "employee_events" ON "employees"."id" = "employee_events"."employee_id" WHERE "employee_events"."event_id" = ?[0m  [["event_id", 6]]
+[active_model_serializers]   ↳ app/controllers/events_controller.rb:5
+[active_model_serializers]   [1m[36mComment Load (0.1ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."event_id" = ?[0m  [["event_id", 6]]
+[active_model_serializers]   ↳ app/controllers/events_controller.rb:5
+[active_model_serializers] No serializer found for resource: #<Comment id: 2, content: "So, what the heck is it?", employee_id: 1, event_id: 6, created_at: "2019-12-06 02:58:13", updated_at: "2019-12-06 02:58:13">
+[active_model_serializers]   [1m[36mEmployee Load (0.1ms)[0m  [1m[34mSELECT "employees".* FROM "employees" INNER JOIN "employee_events" ON "employees"."id" = "employee_events"."employee_id" WHERE "employee_events"."event_id" = ?[0m  [["event_id", 7]]
+[active_model_serializers]   ↳ app/controllers/events_controller.rb:5
+[active_model_serializers]   [1m[36mComment Load (0.1ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."event_id" = ?[0m  [["event_id", 7]]
+[active_model_serializers]   ↳ app/controllers/events_controller.rb:5
+[active_model_serializers]   [1m[36mEmployee Load (0.1ms)[0m  [1m[34mSELECT "employees".* FROM "employees" INNER JOIN "employee_events" ON "employees"."id" = "employee_events"."employee_id" WHERE "employee_events"."event_id" = ?[0m  [["event_id", 8]]
+[active_model_serializers]   ↳ app/controllers/events_controller.rb:5
+[active_model_serializers]   [1m[36mComment Load (0.1ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."event_id" = ?[0m  [["event_id", 8]]
+[active_model_serializers]   ↳ app/controllers/events_controller.rb:5
+[active_model_serializers]   [1m[36mEmployee Load (0.1ms)[0m  [1m[34mSELECT "employees".* FROM "employees" INNER JOIN "employee_events" ON "employees"."id" = "employee_events"."employee_id" WHERE "employee_events"."event_id" = ?[0m  [["event_id", 9]]
+[active_model_serializers]   ↳ app/controllers/events_controller.rb:5
+[active_model_serializers]   [1m[36mComment Load (0.1ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."event_id" = ?[0m  [["event_id", 9]]
+[active_model_serializers]   ↳ app/controllers/events_controller.rb:5
+[active_model_serializers]   [1m[36mEmployee Load (0.1ms)[0m  [1m[34mSELECT "employees".* FROM "employees" INNER JOIN "employee_events" ON "employees"."id" = "employee_events"."employee_id" WHERE "employee_events"."event_id" = ?[0m  [["event_id", 10]]
+[active_model_serializers]   ↳ app/controllers/events_controller.rb:5
+[active_model_serializers]   [1m[36mComment Load (0.1ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."event_id" = ?[0m  [["event_id", 10]]
+[active_model_serializers]   ↳ app/controllers/events_controller.rb:5
+[active_model_serializers] No serializer found for resource: #<Comment id: 4, content: "Such a great book", employee_id: 3, event_id: 10, created_at: "2019-12-06 02:58:13", updated_at: "2019-12-06 02:58:13">
+[active_model_serializers]   [1m[36mEmployee Load (0.1ms)[0m  [1m[34mSELECT "employees".* FROM "employees" INNER JOIN "employee_events" ON "employees"."id" = "employee_events"."employee_id" WHERE "employee_events"."event_id" = ?[0m  [["event_id", 11]]
+[active_model_serializers]   ↳ app/controllers/events_controller.rb:5
+[active_model_serializers]   [1m[36mComment Load (0.1ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."event_id" = ?[0m  [["event_id", 11]]
+[active_model_serializers]   ↳ app/controllers/events_controller.rb:5
+[active_model_serializers]   [1m[36mEmployee Load (0.1ms)[0m  [1m[34mSELECT "employees".* FROM "employees" INNER JOIN "employee_events" ON "employees"."id" = "employee_events"."employee_id" WHERE "employee_events"."event_id" = ?[0m  [["event_id", 12]]
+[active_model_serializers]   ↳ app/controllers/events_controller.rb:5
+[active_model_serializers]   [1m[36mComment Load (0.1ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."event_id" = ?[0m  [["event_id", 12]]
+[active_model_serializers]   ↳ app/controllers/events_controller.rb:5
+[active_model_serializers] No serializer found for resource: #<Comment id: 1, content: "How was the pizza?", employee_id: 1, event_id: 12, created_at: "2019-12-06 02:58:13", updated_at: "2019-12-06 02:58:13">
+[active_model_serializers] No serializer found for resource: #<Comment id: 2, content: "So, what the heck is it?", employee_id: 1, event_id: 6, created_at: "2019-12-06 02:58:13", updated_at: "2019-12-06 02:58:13">
+[active_model_serializers] No serializer found for resource: #<Comment id: 4, content: "Such a great book", employee_id: 3, event_id: 10, created_at: "2019-12-06 02:58:13", updated_at: "2019-12-06 02:58:13">
+[active_model_serializers] No serializer found for resource: #<Comment id: 1, content: "How was the pizza?", employee_id: 1, event_id: 12, created_at: "2019-12-06 02:58:13", updated_at: "2019-12-06 02:58:13">
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (81.72ms)
+Completed 200 OK in 111ms (Views: 103.8ms | ActiveRecord: 3.4ms)
+
+
+Started GET "/api/v1/events" for 127.0.0.1 at 2019-12-10 17:08:31 -0700
+Processing by EventsController#index as */*
+  [1m[36mEvent Load (0.3ms)[0m  [1m[34mSELECT "events".* FROM "events"[0m
+Started GET "/api/v1/employees" for 127.0.0.1 at 2019-12-10 17:08:31 -0700
+  ↳ app/controllers/events_controller.rb:5
+[active_model_serializers]   [1m[36mEmployee Load (0.1ms)[0m  [1m[34mSELECT "employees".* FROM "employees" INNER JOIN "employee_events" ON "employees"."id" = "employee_events"."employee_id" WHERE "employee_events"."event_id" = ?[0m  [["event_id", 1]]
+[active_model_serializers]   ↳ app/controllers/events_controller.rb:5
+[active_model_serializers]   [1m[36mComment Load (0.1ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."event_id" = ?[0m  [["event_id", 1]]
+[active_model_serializers]   ↳ app/controllers/events_controller.rb:5
+[active_model_serializers]   [1m[36mEmployee Load (0.1ms)[0m  [1m[34mSELECT "employees".* FROM "employees" INNER JOIN "employee_events" ON "employees"."id" = "employee_events"."employee_id" WHERE "employee_events"."event_id" = ?[0m  [["event_id", 2]]
+[active_model_serializers]   ↳ app/controllers/events_controller.rb:5
+[active_model_serializers]   [1m[36mComment Load (0.1ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."event_id" = ?[0m  [["event_id", 2]]
+[active_model_serializers]   ↳ app/controllers/events_controller.rb:5
+[active_model_serializers]   [1m[36mEmployee Load (0.1ms)[0m  [1m[34mSELECT "employees".* FROM "employees" INNER JOIN "employee_events" ON "employees"."id" = "employee_events"."employee_id" WHERE "employee_events"."event_id" = ?[0m  [["event_id", 3]]
+[active_model_serializers]   ↳ app/controllers/events_controller.rb:5
+[active_model_serializers]   [1m[36mComment Load (0.1ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."event_id" = ?[0m  [["event_id", 3]]
+[active_model_serializers]   ↳ app/controllers/events_controller.rb:5
+[active_model_serializers]   [1m[36mEmployee Load (0.1ms)[0m  [1m[34mSELECT "employees".* FROM "employees" INNER JOIN "employee_events" ON "employees"."id" = "employee_events"."employee_id" WHERE "employee_events"."event_id" = ?[0m  [["event_id", 4]]
+[active_model_serializers]   ↳ app/controllers/events_controller.rb:5
+[active_model_serializers]   [1m[36mComment Load (2.3ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."event_id" = ?[0m  [["event_id", 4]]
+[active_model_serializers]   ↳ app/controllers/events_controller.rb:5
+[active_model_serializers]   [1m[36mEmployee Load (0.2ms)[0m  [1m[34mSELECT "employees".* FROM "employees" INNER JOIN "employee_events" ON "employees"."id" = "employee_events"."employee_id" WHERE "employee_events"."event_id" = ?[0m  [["event_id", 5]]
+[active_model_serializers]   ↳ app/controllers/events_controller.rb:5
+[active_model_serializers]   [1m[36mComment Load (0.1ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."event_id" = ?[0m  [["event_id", 5]]
+[active_model_serializers]   ↳ app/controllers/events_controller.rb:5
+[active_model_serializers]   [1m[36mEmployee Load (0.1ms)[0m  [1m[34mSELECT "employees".* FROM "employees" INNER JOIN "employee_events" ON "employees"."id" = "employee_events"."employee_id" WHERE "employee_events"."event_id" = ?[0m  [["event_id", 6]]
+[active_model_serializers]   ↳ app/controllers/events_controller.rb:5
+[active_model_serializers]   [1m[36mComment Load (0.2ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."event_id" = ?[0m  [["event_id", 6]]
+[active_model_serializers]   ↳ app/controllers/events_controller.rb:5
+[active_model_serializers] No serializer found for resource: #<Comment id: 2, content: "So, what the heck is it?", employee_id: 1, event_id: 6, created_at: "2019-12-06 02:58:13", updated_at: "2019-12-06 02:58:13">
+[active_model_serializers]   [1m[36mEmployee Load (0.4ms)[0m  [1m[34mSELECT "employees".* FROM "employees" INNER JOIN "employee_events" ON "employees"."id" = "employee_events"."employee_id" WHERE "employee_events"."event_id" = ?[0m  [["event_id", 7]]
+[active_model_serializers]   ↳ app/controllers/events_controller.rb:5
+[active_model_serializers]   [1m[36mComment Load (0.1ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."event_id" = ?[0m  [["event_id", 7]]
+[active_model_serializers]   ↳ app/controllers/events_controller.rb:5
+[active_model_serializers]   [1m[36mEmployee Load (0.1ms)[0m  [1m[34mSELECT "employees".* FROM "employees" INNER JOIN "employee_events" ON "employees"."id" = "employee_events"."employee_id" WHERE "employee_events"."event_id" = ?[0m  [["event_id", 8]]
+[active_model_serializers]   ↳ app/controllers/events_controller.rb:5
+[active_model_serializers]   [1m[36mComment Load (0.1ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."event_id" = ?[0m  [["event_id", 8]]
+[active_model_serializers]   ↳ app/controllers/events_controller.rb:5
+[active_model_serializers]   [1m[36mEmployee Load (0.1ms)[0m  [1m[34mSELECT "employees".* FROM "employees" INNER JOIN "employee_events" ON "employees"."id" = "employee_events"."employee_id" WHERE "employee_events"."event_id" = ?[0m  [["event_id", 9]]
+[active_model_serializers]   ↳ app/controllers/events_controller.rb:5
+[active_model_serializers]   [1m[36mComment Load (0.1ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."event_id" = ?[0m  [["event_id", 9]]
+[active_model_serializers]   ↳ app/controllers/events_controller.rb:5
+Processing by EmployeesController#index as */*
+  [1m[36mEmployee Load (0.2ms)[0m  [1m[34mSELECT "employees".* FROM "employees"[0m
+  ↳ app/controllers/employees_controller.rb:6
+[active_model_serializers]   [1m[36mEvent Load (0.2ms)[0m  [1m[34mSELECT "events".* FROM "events" INNER JOIN "employee_events" ON "events"."id" = "employee_events"."event_id" WHERE "employee_events"."employee_id" = ?[0m  [["employee_id", 1]]
+[active_model_serializers]   [1m[36mEmployee Load (19.0ms)[0m  [1m[34mSELECT "employees".* FROM "employees" INNER JOIN "employee_events" ON "employees"."id" = "employee_events"."employee_id" WHERE "employee_events"."event_id" = ?[0m  [["event_id", 10]]
+[active_model_serializers]   ↳ app/controllers/events_controller.rb:5
+[active_model_serializers]   [1m[36mComment Load (0.1ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."event_id" = ?[0m  [["event_id", 10]]
+[active_model_serializers]   ↳ app/controllers/events_controller.rb:5
+[active_model_serializers] No serializer found for resource: #<Comment id: 4, content: "Such a great book", employee_id: 3, event_id: 10, created_at: "2019-12-06 02:58:13", updated_at: "2019-12-06 02:58:13">
+[active_model_serializers]   [1m[36mEmployee Load (0.1ms)[0m  [1m[34mSELECT "employees".* FROM "employees" INNER JOIN "employee_events" ON "employees"."id" = "employee_events"."employee_id" WHERE "employee_events"."event_id" = ?[0m  [["event_id", 11]]
+[active_model_serializers]   ↳ app/controllers/employees_controller.rb:6
+[active_model_serializers]   ↳ app/controllers/events_controller.rb:5
+[active_model_serializers]   [1m[36mComment Load (0.1ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."event_id" = ?[0m  [["event_id", 11]]
+[active_model_serializers]   [1m[36mEvent Load (0.1ms)[0m  [1m[34mSELECT "events".* FROM "events" INNER JOIN "employee_events" ON "events"."id" = "employee_events"."event_id" WHERE "employee_events"."employee_id" = ?[0m  [["employee_id", 2]]
+[active_model_serializers]   ↳ app/controllers/events_controller.rb:5
+[active_model_serializers]   [1m[36mEmployee Load (0.1ms)[0m  [1m[34mSELECT "employees".* FROM "employees" INNER JOIN "employee_events" ON "employees"."id" = "employee_events"."employee_id" WHERE "employee_events"."event_id" = ?[0m  [["event_id", 12]]
+[active_model_serializers]   ↳ app/controllers/employees_controller.rb:6
+[active_model_serializers]   ↳ app/controllers/events_controller.rb:5
+[active_model_serializers]   [1m[36mEvent Load (0.1ms)[0m  [1m[34mSELECT "events".* FROM "events" INNER JOIN "employee_events" ON "events"."id" = "employee_events"."event_id" WHERE "employee_events"."employee_id" = ?[0m  [["employee_id", 3]]
+[active_model_serializers]   [1m[36mComment Load (0.1ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."event_id" = ?[0m  [["event_id", 12]]
+[active_model_serializers]   ↳ app/controllers/employees_controller.rb:6
+[active_model_serializers]   ↳ app/controllers/events_controller.rb:5
+[active_model_serializers]   [1m[36mEvent Load (0.1ms)[0m  [1m[34mSELECT "events".* FROM "events" INNER JOIN "employee_events" ON "events"."id" = "employee_events"."event_id" WHERE "employee_events"."employee_id" = ?[0m  [["employee_id", 4]]
+[active_model_serializers] No serializer found for resource: #<Comment id: 1, content: "How was the pizza?", employee_id: 1, event_id: 12, created_at: "2019-12-06 02:58:13", updated_at: "2019-12-06 02:58:13">
+[active_model_serializers]   ↳ app/controllers/employees_controller.rb:6
+[active_model_serializers] No serializer found for resource: #<Comment id: 2, content: "So, what the heck is it?", employee_id: 1, event_id: 6, created_at: "2019-12-06 02:58:13", updated_at: "2019-12-06 02:58:13">
+[active_model_serializers]   [1m[36mEvent Load (0.1ms)[0m  [1m[34mSELECT "events".* FROM "events" INNER JOIN "employee_events" ON "events"."id" = "employee_events"."event_id" WHERE "employee_events"."employee_id" = ?[0m  [["employee_id", 5]]
+[active_model_serializers] No serializer found for resource: #<Comment id: 4, content: "Such a great book", employee_id: 3, event_id: 10, created_at: "2019-12-06 02:58:13", updated_at: "2019-12-06 02:58:13">
+[active_model_serializers]   ↳ app/controllers/employees_controller.rb:6
+[active_model_serializers] No serializer found for resource: #<Comment id: 1, content: "How was the pizza?", employee_id: 1, event_id: 12, created_at: "2019-12-06 02:58:13", updated_at: "2019-12-06 02:58:13">
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (85.24ms)
+Completed 200 OK in 94ms (Views: 69.3ms | ActiveRecord: 24.2ms)
+
+
+[active_model_serializers]   [1m[36mEvent Load (0.1ms)[0m  [1m[34mSELECT "events".* FROM "events" INNER JOIN "employee_events" ON "events"."id" = "employee_events"."event_id" WHERE "employee_events"."employee_id" = ?[0m  [["employee_id", 6]]
+[active_model_serializers]   ↳ app/controllers/employees_controller.rb:6
+[active_model_serializers]   [1m[36mEvent Load (0.1ms)[0m  [1m[34mSELECT "events".* FROM "events" INNER JOIN "employee_events" ON "events"."id" = "employee_events"."event_id" WHERE "employee_events"."employee_id" = ?[0m  [["employee_id", 7]]
+[active_model_serializers]   ↳ app/controllers/employees_controller.rb:6
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (45.86ms)
+Completed 200 OK in 51ms (Views: 49.9ms | ActiveRecord: 1.0ms)
+
+
+Started POST "/api/v1/employees" for 127.0.0.1 at 2019-12-10 17:09:16 -0700
+Processing by EmployeesController#create as JSON
+  Parameters: {"user"=>{"username"=>"test", "password"=>"[FILTERED]", "email"=>"test@test.com", "name"=>"test test", "location_id"=>2, "manager_id"=>1}, "employee"=>{}}
+Completed 400 Bad Request in 0ms (ActiveRecord: 0.0ms)
+
+
+  
+ActionController::ParameterMissing (param is missing or the value is empty: employee):
+  
+app/controllers/employees_controller.rb:51:in `employee_params'
+app/controllers/employees_controller.rb:14:in `create'
+Started GET "/api/v1/employees" for 127.0.0.1 at 2019-12-10 17:09:57 -0700
+Started GET "/api/v1/events" for 127.0.0.1 at 2019-12-10 17:09:57 -0700
+Processing by EmployeesController#index as */*
+Processing by EventsController#index as */*
+  [1m[36mEmployee Load (0.3ms)[0m  [1m[34mSELECT "employees".* FROM "employees"[0m
+  ↳ app/controllers/employees_controller.rb:6
+  [1m[36mEvent Load (0.1ms)[0m  [1m[34mSELECT "events".* FROM "events"[0m
+  ↳ app/controllers/events_controller.rb:5
+[active_model_serializers]   [1m[36mEvent Load (0.1ms)[0m  [1m[34mSELECT "events".* FROM "events" INNER JOIN "employee_events" ON "events"."id" = "employee_events"."event_id" WHERE "employee_events"."employee_id" = ?[0m  [["employee_id", 1]]
+[active_model_serializers]   ↳ app/controllers/employees_controller.rb:6
+[active_model_serializers]   [1m[36mEmployee Load (0.1ms)[0m  [1m[34mSELECT "employees".* FROM "employees" INNER JOIN "employee_events" ON "employees"."id" = "employee_events"."employee_id" WHERE "employee_events"."event_id" = ?[0m  [["event_id", 1]]
+[active_model_serializers]   [1m[36mEvent Load (0.1ms)[0m  [1m[34mSELECT "events".* FROM "events" INNER JOIN "employee_events" ON "events"."id" = "employee_events"."event_id" WHERE "employee_events"."employee_id" = ?[0m  [["employee_id", 2]]
+[active_model_serializers]   ↳ app/controllers/events_controller.rb:5
+[active_model_serializers]   ↳ app/controllers/employees_controller.rb:6
+[active_model_serializers]   [1m[36mComment Load (0.1ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."event_id" = ?[0m  [["event_id", 1]]
+[active_model_serializers]   [1m[36mEvent Load (0.1ms)[0m  [1m[34mSELECT "events".* FROM "events" INNER JOIN "employee_events" ON "events"."id" = "employee_events"."event_id" WHERE "employee_events"."employee_id" = ?[0m  [["employee_id", 3]]
+[active_model_serializers]   ↳ app/controllers/events_controller.rb:5
+[active_model_serializers]   ↳ app/controllers/employees_controller.rb:6
+[active_model_serializers]   [1m[36mEmployee Load (0.1ms)[0m  [1m[34mSELECT "employees".* FROM "employees" INNER JOIN "employee_events" ON "employees"."id" = "employee_events"."employee_id" WHERE "employee_events"."event_id" = ?[0m  [["event_id", 2]]
+[active_model_serializers]   [1m[36mEvent Load (0.1ms)[0m  [1m[34mSELECT "events".* FROM "events" INNER JOIN "employee_events" ON "events"."id" = "employee_events"."event_id" WHERE "employee_events"."employee_id" = ?[0m  [["employee_id", 4]]
+[active_model_serializers]   ↳ app/controllers/events_controller.rb:5
+[active_model_serializers]   ↳ app/controllers/employees_controller.rb:6
+[active_model_serializers]   [1m[36mComment Load (0.1ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."event_id" = ?[0m  [["event_id", 2]]
+[active_model_serializers]   ↳ app/controllers/events_controller.rb:5
+[active_model_serializers]   [1m[36mEmployee Load (0.1ms)[0m  [1m[34mSELECT "employees".* FROM "employees" INNER JOIN "employee_events" ON "employees"."id" = "employee_events"."employee_id" WHERE "employee_events"."event_id" = ?[0m  [["event_id", 3]]
+[active_model_serializers]   [1m[36mEvent Load (0.1ms)[0m  [1m[34mSELECT "events".* FROM "events" INNER JOIN "employee_events" ON "events"."id" = "employee_events"."event_id" WHERE "employee_events"."employee_id" = ?[0m  [["employee_id", 5]]
+[active_model_serializers]   ↳ app/controllers/events_controller.rb:5
+[active_model_serializers]   [1m[36mComment Load (0.1ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."event_id" = ?[0m  [["event_id", 3]]
+[active_model_serializers]   ↳ app/controllers/events_controller.rb:5
+[active_model_serializers]   ↳ app/controllers/employees_controller.rb:6
+[active_model_serializers]   [1m[36mEvent Load (0.2ms)[0m  [1m[34mSELECT "events".* FROM "events" INNER JOIN "employee_events" ON "events"."id" = "employee_events"."event_id" WHERE "employee_events"."employee_id" = ?[0m  [["employee_id", 6]]
+[active_model_serializers]   [1m[36mEmployee Load (0.1ms)[0m  [1m[34mSELECT "employees".* FROM "employees" INNER JOIN "employee_events" ON "employees"."id" = "employee_events"."employee_id" WHERE "employee_events"."event_id" = ?[0m  [["event_id", 4]]
+[active_model_serializers]   ↳ app/controllers/employees_controller.rb:6
+[active_model_serializers]   ↳ app/controllers/events_controller.rb:5
+[active_model_serializers]   [1m[36mEvent Load (0.5ms)[0m  [1m[34mSELECT "events".* FROM "events" INNER JOIN "employee_events" ON "events"."id" = "employee_events"."event_id" WHERE "employee_events"."employee_id" = ?[0m  [["employee_id", 7]]
+[active_model_serializers]   ↳ app/controllers/employees_controller.rb:6
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (31.26ms)
+Completed 200 OK in 35ms (Views: 33.1ms | ActiveRecord: 1.6ms)
+
+
+[active_model_serializers]   [1m[36mComment Load (0.2ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."event_id" = ?[0m  [["event_id", 4]]
+[active_model_serializers]   ↳ app/controllers/events_controller.rb:5
+[active_model_serializers]   [1m[36mEmployee Load (0.1ms)[0m  [1m[34mSELECT "employees".* FROM "employees" INNER JOIN "employee_events" ON "employees"."id" = "employee_events"."employee_id" WHERE "employee_events"."event_id" = ?[0m  [["event_id", 5]]
+[active_model_serializers]   ↳ app/controllers/events_controller.rb:5
+[active_model_serializers]   [1m[36mComment Load (0.1ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."event_id" = ?[0m  [["event_id", 5]]
+[active_model_serializers]   ↳ app/controllers/events_controller.rb:5
+[active_model_serializers]   [1m[36mEmployee Load (0.1ms)[0m  [1m[34mSELECT "employees".* FROM "employees" INNER JOIN "employee_events" ON "employees"."id" = "employee_events"."employee_id" WHERE "employee_events"."event_id" = ?[0m  [["event_id", 6]]
+[active_model_serializers]   ↳ app/controllers/events_controller.rb:5
+[active_model_serializers]   [1m[36mComment Load (0.1ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."event_id" = ?[0m  [["event_id", 6]]
+[active_model_serializers]   ↳ app/controllers/events_controller.rb:5
+[active_model_serializers] No serializer found for resource: #<Comment id: 2, content: "So, what the heck is it?", employee_id: 1, event_id: 6, created_at: "2019-12-06 02:58:13", updated_at: "2019-12-06 02:58:13">
+[active_model_serializers]   [1m[36mEmployee Load (0.1ms)[0m  [1m[34mSELECT "employees".* FROM "employees" INNER JOIN "employee_events" ON "employees"."id" = "employee_events"."employee_id" WHERE "employee_events"."event_id" = ?[0m  [["event_id", 7]]
+[active_model_serializers]   ↳ app/controllers/events_controller.rb:5
+[active_model_serializers]   [1m[36mComment Load (0.2ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."event_id" = ?[0m  [["event_id", 7]]
+[active_model_serializers]   ↳ app/controllers/events_controller.rb:5
+[active_model_serializers]   [1m[36mEmployee Load (0.1ms)[0m  [1m[34mSELECT "employees".* FROM "employees" INNER JOIN "employee_events" ON "employees"."id" = "employee_events"."employee_id" WHERE "employee_events"."event_id" = ?[0m  [["event_id", 8]]
+[active_model_serializers]   ↳ app/controllers/events_controller.rb:5
+[active_model_serializers]   [1m[36mComment Load (0.1ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."event_id" = ?[0m  [["event_id", 8]]
+[active_model_serializers]   ↳ app/controllers/events_controller.rb:5
+[active_model_serializers]   [1m[36mEmployee Load (0.3ms)[0m  [1m[34mSELECT "employees".* FROM "employees" INNER JOIN "employee_events" ON "employees"."id" = "employee_events"."employee_id" WHERE "employee_events"."event_id" = ?[0m  [["event_id", 9]]
+[active_model_serializers]   ↳ app/controllers/events_controller.rb:5
+[active_model_serializers]   [1m[36mComment Load (0.3ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."event_id" = ?[0m  [["event_id", 9]]
+[active_model_serializers]   ↳ app/controllers/events_controller.rb:5
+[active_model_serializers]   [1m[36mEmployee Load (0.1ms)[0m  [1m[34mSELECT "employees".* FROM "employees" INNER JOIN "employee_events" ON "employees"."id" = "employee_events"."employee_id" WHERE "employee_events"."event_id" = ?[0m  [["event_id", 10]]
+[active_model_serializers]   ↳ app/controllers/events_controller.rb:5
+[active_model_serializers]   [1m[36mComment Load (0.6ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."event_id" = ?[0m  [["event_id", 10]]
+[active_model_serializers]   ↳ app/controllers/events_controller.rb:5
+[active_model_serializers] No serializer found for resource: #<Comment id: 4, content: "Such a great book", employee_id: 3, event_id: 10, created_at: "2019-12-06 02:58:13", updated_at: "2019-12-06 02:58:13">
+[active_model_serializers]   [1m[36mEmployee Load (0.1ms)[0m  [1m[34mSELECT "employees".* FROM "employees" INNER JOIN "employee_events" ON "employees"."id" = "employee_events"."employee_id" WHERE "employee_events"."event_id" = ?[0m  [["event_id", 11]]
+[active_model_serializers]   ↳ app/controllers/events_controller.rb:5
+[active_model_serializers]   [1m[36mComment Load (0.1ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."event_id" = ?[0m  [["event_id", 11]]
+[active_model_serializers]   ↳ app/controllers/events_controller.rb:5
+[active_model_serializers]   [1m[36mEmployee Load (0.2ms)[0m  [1m[34mSELECT "employees".* FROM "employees" INNER JOIN "employee_events" ON "employees"."id" = "employee_events"."employee_id" WHERE "employee_events"."event_id" = ?[0m  [["event_id", 12]]
+[active_model_serializers]   ↳ app/controllers/events_controller.rb:5
+[active_model_serializers]   [1m[36mComment Load (0.1ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."event_id" = ?[0m  [["event_id", 12]]
+[active_model_serializers]   ↳ app/controllers/events_controller.rb:5
+[active_model_serializers] No serializer found for resource: #<Comment id: 1, content: "How was the pizza?", employee_id: 1, event_id: 12, created_at: "2019-12-06 02:58:13", updated_at: "2019-12-06 02:58:13">
+[active_model_serializers] No serializer found for resource: #<Comment id: 2, content: "So, what the heck is it?", employee_id: 1, event_id: 6, created_at: "2019-12-06 02:58:13", updated_at: "2019-12-06 02:58:13">
+[active_model_serializers] No serializer found for resource: #<Comment id: 4, content: "Such a great book", employee_id: 3, event_id: 10, created_at: "2019-12-06 02:58:13", updated_at: "2019-12-06 02:58:13">
+[active_model_serializers] No serializer found for resource: #<Comment id: 1, content: "How was the pizza?", employee_id: 1, event_id: 12, created_at: "2019-12-06 02:58:13", updated_at: "2019-12-06 02:58:13">
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (179.16ms)
+Completed 200 OK in 183ms (Views: 178.9ms | ActiveRecord: 3.8ms)
+
+
+Started POST "/api/v1/employees" for 127.0.0.1 at 2019-12-10 17:10:10 -0700
+Processing by EmployeesController#create as JSON
+  Parameters: {"employee"=>{"username"=>"test", "password"=>"[FILTERED]", "email"=>"test@test.com", "name"=>"test test", "location_id"=>2, "manager_id"=>1}}
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/employees_controller.rb:14
+  [1m[36mLocation Load (0.6ms)[0m  [1m[34mSELECT  "locations".* FROM "locations" WHERE "locations"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/employees_controller.rb:14
+  [1m[36mEmployee Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "employees" WHERE "employees"."username" = ? LIMIT ?[0m  [["username", "test"], ["LIMIT", 1]]
+  ↳ app/controllers/employees_controller.rb:14
+  [1m[36mEmployee Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "employees" WHERE "employees"."email" = ? LIMIT ?[0m  [["email", "test@test.com"], ["LIMIT", 1]]
+  ↳ app/controllers/employees_controller.rb:14
+  [1m[36mEmployee Create (2.4ms)[0m  [1m[32mINSERT INTO "employees" ("username", "password_digest", "email", "name", "location_id", "manager_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?)[0m  [["username", "test"], ["password_digest", "$2a$12$l7unWrs39q969N45IvJmceN08Xdy.fTP1mvuVGjXxn1KqMbSQZFiS"], ["email", "test@test.com"], ["name", "test test"], ["location_id", 2], ["manager_id", 1], ["created_at", "2019-12-11 00:10:10.400290"], ["updated_at", "2019-12-11 00:10:10.400290"]]
+  ↳ app/controllers/employees_controller.rb:14
+  [1m[35m (1.0ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/employees_controller.rb:14
+[active_model_serializers]   [1m[36mEvent Load (0.2ms)[0m  [1m[34mSELECT "events".* FROM "events" INNER JOIN "employee_events" ON "events"."id" = "employee_events"."event_id" WHERE "employee_events"."employee_id" = ?[0m  [["employee_id", 8]]
+[active_model_serializers]   ↳ app/controllers/employees_controller.rb:15
+[active_model_serializers] Rendered EmployeeSerializer with ActiveModelSerializers::Adapter::Attributes (1.47ms)
+Completed 200 OK in 249ms (Views: 1.7ms | ActiveRecord: 4.8ms)
+
+
+Started GET "/api/v1/events" for 127.0.0.1 at 2019-12-10 17:10:39 -0700
+Processing by EventsController#index as */*
+  [1m[36mEvent Load (0.2ms)[0m  [1m[34mSELECT "events".* FROM "events"[0m
+  ↳ app/controllers/events_controller.rb:5
+[active_model_serializers]   [1m[36mEmployee Load (0.1ms)[0m  [1m[34mSELECT "employees".* FROM "employees" INNER JOIN "employee_events" ON "employees"."id" = "employee_events"."employee_id" WHERE "employee_events"."event_id" = ?[0m  [["event_id", 1]]
+[active_model_serializers]   ↳ app/controllers/events_controller.rb:5
+[active_model_serializers]   [1m[36mComment Load (0.1ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."event_id" = ?[0m  [["event_id", 1]]
+[active_model_serializers]   ↳ app/controllers/events_controller.rb:5
+[active_model_serializers]   [1m[36mEmployee Load (0.1ms)[0m  [1m[34mSELECT "employees".* FROM "employees" INNER JOIN "employee_events" ON "employees"."id" = "employee_events"."employee_id" WHERE "employee_events"."event_id" = ?[0m  [["event_id", 2]]
+[active_model_serializers]   ↳ app/controllers/events_controller.rb:5
+[active_model_serializers]   [1m[36mComment Load (0.1ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."event_id" = ?[0m  [["event_id", 2]]
+[active_model_serializers]   ↳ app/controllers/events_controller.rb:5
+[active_model_serializers]   [1m[36mEmployee Load (0.1ms)[0m  [1m[34mSELECT "employees".* FROM "employees" INNER JOIN "employee_events" ON "employees"."id" = "employee_events"."employee_id" WHERE "employee_events"."event_id" = ?[0m  [["event_id", 3]]
+[active_model_serializers]   ↳ app/controllers/events_controller.rb:5
+[active_model_serializers]   [1m[36mComment Load (0.1ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."event_id" = ?[0m  [["event_id", 3]]
+[active_model_serializers]   ↳ app/controllers/events_controller.rb:5
+[active_model_serializers]   [1m[36mEmployee Load (0.1ms)[0m  [1m[34mSELECT "employees".* FROM "employees" INNER JOIN "employee_events" ON "employees"."id" = "employee_events"."employee_id" WHERE "employee_events"."event_id" = ?[0m  [["event_id", 4]]
+[active_model_serializers]   ↳ app/controllers/events_controller.rb:5
+[active_model_serializers]   [1m[36mComment Load (0.1ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."event_id" = ?[0m  [["event_id", 4]]
+[active_model_serializers]   ↳ app/controllers/events_controller.rb:5
+[active_model_serializers]   [1m[36mEmployee Load (0.1ms)[0m  [1m[34mSELECT "employees".* FROM "employees" INNER JOIN "employee_events" ON "employees"."id" = "employee_events"."employee_id" WHERE "employee_events"."event_id" = ?[0m  [["event_id", 5]]
+[active_model_serializers]   ↳ app/controllers/events_controller.rb:5
+[active_model_serializers]   [1m[36mComment Load (0.1ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."event_id" = ?[0m  [["event_id", 5]]
+[active_model_serializers]   ↳ app/controllers/events_controller.rb:5
+[active_model_serializers]   [1m[36mEmployee Load (0.1ms)[0m  [1m[34mSELECT "employees".* FROM "employees" INNER JOIN "employee_events" ON "employees"."id" = "employee_events"."employee_id" WHERE "employee_events"."event_id" = ?[0m  [["event_id", 6]]
+[active_model_serializers]   ↳ app/controllers/events_controller.rb:5
+[active_model_serializers]   [1m[36mComment Load (0.1ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."event_id" = ?[0m  [["event_id", 6]]
+[active_model_serializers]   ↳ app/controllers/events_controller.rb:5
+[active_model_serializers] No serializer found for resource: #<Comment id: 2, content: "So, what the heck is it?", employee_id: 1, event_id: 6, created_at: "2019-12-06 02:58:13", updated_at: "2019-12-06 02:58:13">
+Started GET "/api/v1/employees" for 127.0.0.1 at 2019-12-10 17:10:39 -0700
+Processing by EmployeesController#index as */*
+  [1m[36mEmployee Load (0.2ms)[0m  [1m[34mSELECT "employees".* FROM "employees"[0m
+  ↳ app/controllers/employees_controller.rb:6
+[active_model_serializers]   [1m[36mEvent Load (0.2ms)[0m  [1m[34mSELECT "events".* FROM "events" INNER JOIN "employee_events" ON "events"."id" = "employee_events"."event_id" WHERE "employee_events"."employee_id" = ?[0m  [["employee_id", 1]]
+[active_model_serializers]   ↳ app/controllers/employees_controller.rb:6
+[active_model_serializers]   [1m[36mEvent Load (0.2ms)[0m  [1m[34mSELECT "events".* FROM "events" INNER JOIN "employee_events" ON "events"."id" = "employee_events"."event_id" WHERE "employee_events"."employee_id" = ?[0m  [["employee_id", 2]]
+[active_model_serializers]   ↳ app/controllers/employees_controller.rb:6
+[active_model_serializers]   [1m[36mEvent Load (0.1ms)[0m  [1m[34mSELECT "events".* FROM "events" INNER JOIN "employee_events" ON "events"."id" = "employee_events"."event_id" WHERE "employee_events"."employee_id" = ?[0m  [["employee_id", 3]]
+[active_model_serializers]   [1m[36mEmployee Load (0.1ms)[0m  [1m[34mSELECT "employees".* FROM "employees" INNER JOIN "employee_events" ON "employees"."id" = "employee_events"."employee_id" WHERE "employee_events"."event_id" = ?[0m  [["event_id", 7]]
+[active_model_serializers]   ↳ app/controllers/events_controller.rb:5
+[active_model_serializers]   ↳ app/controllers/employees_controller.rb:6
+[active_model_serializers]   [1m[36mEvent Load (0.1ms)[0m  [1m[34mSELECT "events".* FROM "events" INNER JOIN "employee_events" ON "events"."id" = "employee_events"."event_id" WHERE "employee_events"."employee_id" = ?[0m  [["employee_id", 4]]
+[active_model_serializers]   ↳ app/controllers/employees_controller.rb:6
+[active_model_serializers]   [1m[36mEvent Load (0.1ms)[0m  [1m[34mSELECT "events".* FROM "events" INNER JOIN "employee_events" ON "events"."id" = "employee_events"."event_id" WHERE "employee_events"."employee_id" = ?[0m  [["employee_id", 5]]
+[active_model_serializers]   ↳ app/controllers/employees_controller.rb:6
+[active_model_serializers]   [1m[36mEvent Load (0.1ms)[0m  [1m[34mSELECT "events".* FROM "events" INNER JOIN "employee_events" ON "events"."id" = "employee_events"."event_id" WHERE "employee_events"."employee_id" = ?[0m  [["employee_id", 6]]
+[active_model_serializers]   ↳ app/controllers/employees_controller.rb:6
+[active_model_serializers]   [1m[36mEvent Load (0.1ms)[0m  [1m[34mSELECT "events".* FROM "events" INNER JOIN "employee_events" ON "events"."id" = "employee_events"."event_id" WHERE "employee_events"."employee_id" = ?[0m  [["employee_id", 7]]
+[active_model_serializers]   ↳ app/controllers/employees_controller.rb:6
+[active_model_serializers]   [1m[36mComment Load (0.2ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."event_id" = ?[0m  [["event_id", 7]]
+[active_model_serializers]   ↳ app/controllers/events_controller.rb:5
+[active_model_serializers]   [1m[36mEmployee Load (0.1ms)[0m  [1m[34mSELECT "employees".* FROM "employees" INNER JOIN "employee_events" ON "employees"."id" = "employee_events"."employee_id" WHERE "employee_events"."event_id" = ?[0m  [["event_id", 8]]
+[active_model_serializers]   [1m[36mEvent Load (0.1ms)[0m  [1m[34mSELECT "events".* FROM "events" INNER JOIN "employee_events" ON "events"."id" = "employee_events"."event_id" WHERE "employee_events"."employee_id" = ?[0m  [["employee_id", 8]]
+[active_model_serializers]   ↳ app/controllers/employees_controller.rb:6
+[active_model_serializers]   ↳ app/controllers/events_controller.rb:5
+[active_model_serializers]   [1m[36mComment Load (0.1ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."event_id" = ?[0m  [["event_id", 8]]
+[active_model_serializers]   ↳ app/controllers/events_controller.rb:5
+[active_model_serializers]   [1m[36mEmployee Load (0.1ms)[0m  [1m[34mSELECT "employees".* FROM "employees" INNER JOIN "employee_events" ON "employees"."id" = "employee_events"."employee_id" WHERE "employee_events"."event_id" = ?[0m  [["event_id", 9]]
+[active_model_serializers]   ↳ app/controllers/events_controller.rb:5
+[active_model_serializers]   [1m[36mComment Load (0.1ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."event_id" = ?[0m  [["event_id", 9]]
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (32.75ms)
+Completed 200 OK in 39ms (Views: 37.4ms | ActiveRecord: 1.3ms)
+
+
+[active_model_serializers]   ↳ app/controllers/events_controller.rb:5
+[active_model_serializers]   [1m[36mEmployee Load (0.1ms)[0m  [1m[34mSELECT "employees".* FROM "employees" INNER JOIN "employee_events" ON "employees"."id" = "employee_events"."employee_id" WHERE "employee_events"."event_id" = ?[0m  [["event_id", 10]]
+[active_model_serializers]   ↳ app/controllers/events_controller.rb:5
+[active_model_serializers]   [1m[36mComment Load (0.1ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."event_id" = ?[0m  [["event_id", 10]]
+[active_model_serializers]   ↳ app/controllers/events_controller.rb:5
+[active_model_serializers] No serializer found for resource: #<Comment id: 4, content: "Such a great book", employee_id: 3, event_id: 10, created_at: "2019-12-06 02:58:13", updated_at: "2019-12-06 02:58:13">
+[active_model_serializers]   [1m[36mEmployee Load (0.1ms)[0m  [1m[34mSELECT "employees".* FROM "employees" INNER JOIN "employee_events" ON "employees"."id" = "employee_events"."employee_id" WHERE "employee_events"."event_id" = ?[0m  [["event_id", 11]]
+[active_model_serializers]   ↳ app/controllers/events_controller.rb:5
+[active_model_serializers]   [1m[36mComment Load (0.1ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."event_id" = ?[0m  [["event_id", 11]]
+[active_model_serializers]   ↳ app/controllers/events_controller.rb:5
+[active_model_serializers]   [1m[36mEmployee Load (0.1ms)[0m  [1m[34mSELECT "employees".* FROM "employees" INNER JOIN "employee_events" ON "employees"."id" = "employee_events"."employee_id" WHERE "employee_events"."event_id" = ?[0m  [["event_id", 12]]
+[active_model_serializers]   ↳ app/controllers/events_controller.rb:5
+[active_model_serializers]   [1m[36mComment Load (0.1ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."event_id" = ?[0m  [["event_id", 12]]
+[active_model_serializers]   ↳ app/controllers/events_controller.rb:5
+[active_model_serializers] No serializer found for resource: #<Comment id: 1, content: "How was the pizza?", employee_id: 1, event_id: 12, created_at: "2019-12-06 02:58:13", updated_at: "2019-12-06 02:58:13">
+[active_model_serializers] No serializer found for resource: #<Comment id: 2, content: "So, what the heck is it?", employee_id: 1, event_id: 6, created_at: "2019-12-06 02:58:13", updated_at: "2019-12-06 02:58:13">
+[active_model_serializers] No serializer found for resource: #<Comment id: 4, content: "Such a great book", employee_id: 3, event_id: 10, created_at: "2019-12-06 02:58:13", updated_at: "2019-12-06 02:58:13">
+[active_model_serializers] No serializer found for resource: #<Comment id: 1, content: "How was the pizza?", employee_id: 1, event_id: 12, created_at: "2019-12-06 02:58:13", updated_at: "2019-12-06 02:58:13">
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (135.51ms)
+Completed 200 OK in 138ms (Views: 135.0ms | ActiveRecord: 2.7ms)
+
+
+  [1m[36mEmployee Load (0.4ms)[0m  [1m[34mSELECT  "employees".* FROM "employees" LIMIT ?[0m  [["LIMIT", 11]]

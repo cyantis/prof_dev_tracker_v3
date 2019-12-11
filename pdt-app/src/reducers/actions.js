@@ -1,4 +1,4 @@
-export const userPostFetch = user => {
+export const userPostFetch = employee => {
   return dispatch => {
     return fetch("http://localhost:3001/api/v1/employees", {
       method: "POST",
@@ -6,7 +6,7 @@ export const userPostFetch = user => {
         'Content-Type': 'application/json',
         Accept: 'application/json',
       },
-      body: JSON.stringify({user})
+      body: JSON.stringify({employee})
     })
       .then(resp => resp.json())
       .then(data => {
