@@ -7,6 +7,7 @@ export const userPostFetch = employee => {
       headers: {
         'Content-Type': 'application/json',
         Accept: 'application/json',
+        credentials: 'include',
       },
       body: JSON.stringify({employee})
     })
@@ -26,6 +27,14 @@ export const logIn = loginParams => {
     method: 'POST',
     credentials: 'include',
     body: JSON.stringify(loginParams)
+  }).then(res => res.json())
+}
+
+export const logOut = () => {
+  console.log("Logged Out!")
+  return fetch(`${baseUrl}/api/v1/sessions`, {
+    method: 'DELETE',
+    credentials: 'include'
   }).then(res => res.json())
 }
 

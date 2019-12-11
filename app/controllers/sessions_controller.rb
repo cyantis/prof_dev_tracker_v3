@@ -14,6 +14,10 @@ class SessionsController < ApplicationController
     end
   end
 
+  def destroy
+    cookies.delete(:jwt)
+  end
+
   #def create
   #  @employee = Employee.find_by(username: params[:employee][:username])
   #    if @employee && @employee.authenticate(params[:employee][:password])

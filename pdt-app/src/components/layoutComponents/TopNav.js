@@ -1,14 +1,18 @@
 import React from 'react'
 import Button from './Button'
+import {logOut} from '../../reducers/actions'
 
-const TopNav = () => {
-  return (
-    <div className="TopNav">
-      <Button url='/learning' text='Your Learning Log' />
-      <Button url='/events/new' text='Log New Learning' />
-      <Button url='' text='Log Out' />
-    </div>
-  )
+class TopNav extends React.Component {
+
+  render() {
+    return (
+      <div className="TopNav">
+        <Button url='/learning' text='Your Learning Log' />
+        <Button url='/events/new' text='Log New Learning' />
+        <Button onClick={logOut} text='Log Out' />
+      </div>
+    )
+  }
 }
 
 export default TopNav
