@@ -1,4 +1,5 @@
 import React from 'react'
+import {connect} from 'react-redux';
 import {logIn} from '../../reducers/actions';
 
 class Login extends React.Component {
@@ -48,4 +49,8 @@ class Login extends React.Component {
   }
 };
 
-export default Login
+const mapDispatchToProps = dispatch => ({
+  logIn: loginParams => dispatch(logIn(loginParams))
+})
+
+export default connect(null, mapDispatchToProps)(Login)

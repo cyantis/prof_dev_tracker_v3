@@ -22,7 +22,7 @@ const loginUser = userObj => ({
 
 
 export const logIn = loginParams => {
-  return fetch(`${baseUrl}/auth`, {
+  return fetch(`${baseUrl}/sessions`, {
     method: 'POST',
     credentials: 'include',
     body: JSON.stringify(loginParams)

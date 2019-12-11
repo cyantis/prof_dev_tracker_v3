@@ -1,6 +1,6 @@
-import React, {Component} from 'react';
-import {connect} from 'react-redux';
-import {userPostFetch} from '../../reducers/actions';
+import React, {Component} from 'react'
+import {connect} from 'react-redux'
+import {userPostFetch} from '../../reducers/actions'
 
 class Signup extends Component {
 
