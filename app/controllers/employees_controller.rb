@@ -13,13 +13,17 @@ class EmployeesController < ApplicationController
   def create
     employee = Employee.create(employee_params)
     render json: employee
-    #if @employee.save
-    #  session[:user_id] =  @employee.id
-    #  flash[:message] = "Employee Created!"
-    #  redirect_to root_path
+    #if employee.save
+    #  session[:user_id] = employee.id
+    #  render json: {
+    #    status: :created,
+    #    employee: employee
+    #  }
     #else
-    #  flash[:message] = "Required fields are missing. Please, enter again!"
-    #  render :new
+    #  render json: {
+    #    status: 500,
+    #    errors: @user.errors.full_messages
+    #  }
     #end
   end
 

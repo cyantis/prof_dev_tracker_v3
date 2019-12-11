@@ -6,7 +6,7 @@ Rails.application.routes.draw do
 
     resources :comments, only: [:index]
 
-    resources :employees do
+    resources :employees, param: :_username do
       resources :events
     end
 
