@@ -35,44 +35,46 @@ class Signup extends Component {
 
   render() {
     return (
-      <form onSubmit={this.handleSubmit}>
-        <h1>Sign Up For An Account</h1>
+      <div className="SignUp">
+        <form onSubmit={this.handleSubmit}>
+          <h1>Sign Up For An Account</h1>
 
-        <label>Username</label>
-        <input
-          name='username'
-          placeholder='Username'
-          value={this.state.username}
-          onChange={this.handleOnChange}
-          /><br/>
-
-        <label>Password</label>
-        <input
-          type='password'
-          name='password'
-          placeholder='Password'
-          value={this.state.password}
-          onChange={this.handleOnChange}
-          /><br/>
-
-        <label>Email</label>
-        <input
-          name='email'
-          placeholder='Email'
-          value={this.state.email}
-          onChange={this.handleOnChange}
-          /><br/>
-
-        <label>Your Real Name</label>
+          <label>Username</label>
           <input
-            name='name'
-            placeholder='Real Name'
-            value={this.state.name}
+            name='username'
+            placeholder='Username'
+            value={this.state.username}
             onChange={this.handleOnChange}
             /><br/>
 
-          <input type='submit' value='SignUp!'/>
-      </form>
+          <label>Password</label>
+          <input
+            type='password'
+            name='password'
+            placeholder='Password'
+            value={this.state.password}
+            onChange={this.handleOnChange}
+            /><br/>
+
+          <label>Email</label>
+          <input
+            name='email'
+            placeholder='Email'
+            value={this.state.email}
+            onChange={this.handleOnChange}
+            /><br/>
+
+          <label>Your Real Name</label>
+            <input
+              name='name'
+              placeholder='Real Name'
+              value={this.state.name}
+              onChange={this.handleOnChange}
+              /><br/>
+
+            <input type='submit' value='SignUp!'/>
+          </form>
+        </div>
     )
   }
 }

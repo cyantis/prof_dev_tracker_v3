@@ -1,6 +1,8 @@
+const baseUrl = 'http://localhost:3001/api/v1'
+
 export const userPostFetch = employee => {
   return dispatch => {
-    return fetch("http://localhost:3001/api/v1/employees", {
+    return fetch(`${baseUrl}/employees`, {
       method: "POST",
       headers: {
         'Content-Type': 'application/json',
@@ -17,6 +19,15 @@ const loginUser = userObj => ({
     type: 'LOGIN_USER',
     payload: userObj
 })
+
+
+export const logIn = loginParams => {
+  return fetch(`${baseUrl}/auth`, {
+    method: 'POST',
+    credentials: 'include',
+    body: JSON.stringify(loginParams)
+  }).then(res => res.json())
+}
 
 /*{
   if (data.message) {
