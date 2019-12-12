@@ -1,6 +1,6 @@
 import React, {Component} from 'react'
 import {connect} from 'react-redux'
-import {userPostFetch} from '../../reducers/actions'
+import {createEmployee} from '../../reducers/actions'
 
 class Signup extends Component {
 
@@ -30,7 +30,7 @@ class Signup extends Component {
 
   handleSubmit = event => {
     event.preventDefault()
-    this.props.userPostFetch(this.state)
+    this.props.createEmployee(this.state)
   }
 
   render() {
@@ -80,7 +80,7 @@ class Signup extends Component {
 }
 
 const mapDispatchToProps = dispatch => ({
-  userPostFetch: userInfo => dispatch(userPostFetch(userInfo))
+  createEmployee: userInfo => dispatch(createEmployee(userInfo))
 })
 
 export default connect(null, mapDispatchToProps)(Signup)

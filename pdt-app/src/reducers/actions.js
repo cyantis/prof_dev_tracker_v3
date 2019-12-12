@@ -1,6 +1,6 @@
 const baseUrl = 'http://localhost:3001/api/v1'
 
-export const userPostFetch = employee => {
+export const createEmployee = employee => {
   return dispatch => {
     return fetch(`${baseUrl}/employees`, {
       method: "POST",
@@ -12,12 +12,10 @@ export const userPostFetch = employee => {
     })
       .then(resp => resp.json())
       .then(data => {
-        if (data.message) {
-          // Here you should have logic to handle invalid creation of a user.
-          // This assumes your Rails API will return a JSON object with a key of
-          // 'message' if there is an error with creating the user, i.e. invalid username
+        if (data.error) {
+          // Add logic to handle invalid creation of a user
         } else {
-          localStorage.setItem("token", data.jwt)
+          localStorage.setItem("token", data.auth_token)
           dispatch(loginUser(data.user))
         }
       })
@@ -35,9 +33,20 @@ const loginUser = userObj => ({
 export const logIn = loginParams => {
   return fetch(`${baseUrl}/sessions`, {
     method: 'POST',
-    credentials: 'include',
+    headers: {
+      'Content-Type': 'application/json',
+      Accept: 'application/json',
+    },
     body: JSON.stringify(loginParams)
   }).then(res => res.json())
+  .then(data => {
+    if (data.message) {
+      // Add logic to handle invalid login
+    } else {
+      localStorage.setItem("token", data.auth_token)
+      localStorage.setItem("user_id", data.user_id)
+    }
+  })
 }
 
 export const logOut = () => {
