@@ -2,21 +2,33 @@ class SessionsController < ApplicationController
   #cookies.signed[:key_name]
 
   def create
-    employee = Employee.find_by(username: params[:employee][:username])
-    if employee && employee.authenticate(params[:employee][:password])
-      created_jwt = issue_token({id: user.id})
-      cookies.signed[:jwt] = {value:  created_jwt, httponly: true, expires: 1.hour.from_now}
-      render json: {username: user.username}
+    employee = Employee.find_by(email: params[:email].to_s.downcase)
+
+    if employee && employee.authenticate(params[:password])
+      auth_token = JsonWebToken.encode({user_id: employee.id})
+      render json: {auth_token: auth_token, user_id: employee.id}, status: :ok
     else
-      render json: {
-        error: 'Username or password incorrect'
-        }, status: 404
+      render json: {error: 'Invalid username / password'}, status: :unauthorized
     end
   end
+
 
   def destroy
     cookies.delete(:jwt)
   end
+
+  #def create
+  #  employee = Employee.find_by(username: params[:employee][:username])
+  #  if employee && employee.authenticate(params[:employee][:password])
+  #    created_jwt = issue_token({id: user.id})
+  #    cookies.signed[:jwt] = {value:  created_jwt, httponly: true, expires: 1.hour.from_now}
+  #    render json: {username: user.username}
+  #  else
+  #    render json: {
+  #      error: 'Username or password incorrect'
+  #      }, status: 404
+  #  end
+  #end
 
   #def create
   #  @employee = Employee.find_by(username: params[:employee][:username])

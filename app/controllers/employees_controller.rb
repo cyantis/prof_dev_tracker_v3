@@ -12,7 +12,13 @@ class EmployeesController < ApplicationController
 
   def create
     employee = Employee.create(employee_params)
-    render json: employee
+
+    if employee.save
+      render json: {status: 'User created successfully'}, status: :created
+    else
+      render json: { errors: user.errors.full_messages }, status: :bad_request
+    end
+    #render json: employee
     #if employee.save
     #  session[:user_id] = employee.id
     #  render json: {
