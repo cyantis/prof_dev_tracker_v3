@@ -1,33 +1,30 @@
 const baseUrl = 'http://localhost:3001/api/v1'
 
 export const createEmployee = employee => {
-  return dispatch => {
-    return fetch(`${baseUrl}/employees`, {
-      method: "POST",
-      headers: {
-        'Content-Type': 'application/json',
-        Accept: 'application/json',
-      },
-      body: JSON.stringify({employee})
+  return fetch(`${baseUrl}/employees`, {
+    method: "POST",
+    headers: {
+      'Content-Type': 'application/json',
+      Accept: 'application/json',
+    },
+    body: JSON.stringify({employee})
+  })
+    .then(resp => resp.json())
+    .then(data => {
+      if (data.error) {
+        // Add logic to handle invalid login
+      } else {
+        localStorage.setItem("token", data.auth_token)
+        localStorage.setItem("user_id", data.user_id)
+        window.location.href='/home'
+      }
     })
-      .then(resp => resp.json())
-      .then(data => {
-        if (data.error) {
-          // Add logic to handle invalid creation of a user
-        } else {
-          localStorage.setItem("token", data.auth_token)
-          dispatch(loginUser(data.user))
-        }
-      })
-  }
 }
 
-
-
-const loginUser = userObj => ({
-    type: 'LOGIN_USER',
-    payload: userObj
-})
+//const loginUser = userObj => ({
+//    type: 'LOGIN_USER',
+//    payload: userObj
+//})
 
 
 export const logIn = loginParams => {
@@ -45,6 +42,7 @@ export const logIn = loginParams => {
     } else {
       localStorage.setItem("token", data.auth_token)
       localStorage.setItem("user_id", data.user_id)
+      window.location.href='/home'
     }
   })
 }
@@ -52,4 +50,5 @@ export const logIn = loginParams => {
 export const logOut = () => {
   localStorage.removeItem("token")
   localStorage.removeItem("user_id")
+  window.location.href='/login'
 }
