@@ -13,6 +13,7 @@ class EmployeesController < ApplicationController
       render json: {
         auth_token: auth_token,
         user_id: employee.id,
+        manager: employee.manager?
         }, status: :ok
     else
       render json: { errors: user.errors.full_messages }, status: :bad_request

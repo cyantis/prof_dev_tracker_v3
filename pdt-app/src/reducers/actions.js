@@ -22,12 +22,6 @@ export const createEmployee = employee => {
     })
 }
 
-//const loginUser = userObj => ({
-//    type: 'LOGIN_USER',
-//    payload: userObj
-//})
-
-
 export const logIn = loginParams => {
   return fetch(`${baseUrl}/sessions`, {
     method: 'POST',
@@ -44,7 +38,7 @@ export const logIn = loginParams => {
       localStorage.setItem("token", data.auth_token)
       localStorage.setItem("user_id", data.user_id)
       localStorage.setItem("isManager", data.manager)
-      window.location.href='/home'
+      window.location = '/home'
     }
   })
 }
@@ -52,5 +46,5 @@ export const logIn = loginParams => {
 export const logOut = () => {
   localStorage.removeItem("token")
   localStorage.removeItem("user_id")
-  window.location.href='/login'
+  window.location = '/login'
 }

@@ -19,7 +19,7 @@ class Signup extends Component {
     email: "",
     name: "",
     location_id: 2,
-    manager_id: 1,
+    manager_id: null,
   }
 
   handleOnChange = event => {
@@ -37,7 +37,7 @@ class Signup extends Component {
     return (
       <div className="SignUp">
         <form onSubmit={this.handleSubmit}>
-          <h1>Sign Up For An Account</h1>
+          <h1>Create an Account</h1>
 
           <label>Username</label>
           <input

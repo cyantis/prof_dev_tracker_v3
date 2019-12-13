@@ -1,8 +1,10 @@
 import React from 'react'
-import {connect} from 'react-redux';
+import {connect} from 'react-redux'
 import {logIn} from '../../reducers/actions'
+import SignUp from './SignUp'
 
 class Login extends React.Component {
+
   state = {
     username: "",
     password: "",
@@ -44,6 +46,8 @@ class Login extends React.Component {
 
           <input type='submit' value='LogIn!'/>
         </form>
+        <h3>--- OR ---</h3>
+        <SignUp />
       </div>
     );
   }
