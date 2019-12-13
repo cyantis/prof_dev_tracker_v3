@@ -1,5 +1,4 @@
 class SessionsController < ApplicationController
-  #cookies.signed[:key_name]
 
   def create
     employee = Employee.find_by(username: params[:username].to_s.downcase)
@@ -13,11 +12,6 @@ class SessionsController < ApplicationController
     else
       render json: {error: 'Invalid username / password'}, status: :unauthorized
     end
-  end
-
-
-  def destroy
-    cookies.delete(:jwt)
   end
 
 end

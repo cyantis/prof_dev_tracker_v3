@@ -50,9 +50,6 @@ export const logIn = loginParams => {
 }
 
 export const logOut = () => {
-  console.log("Logged Out!")
-  return fetch(`${baseUrl}/api/v1/sessions`, {
-    method: 'DELETE',
-    credentials: 'include'
-  }).then(res => res.json())
+  localStorage.removeItem("token")
+  localStorage.removeItem("user_id")
 }

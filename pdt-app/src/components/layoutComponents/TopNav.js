@@ -9,7 +9,7 @@ class TopNav extends React.Component {
       <div className="TopNav">
         <Button url='/learning' text='Your Learning Log' />
         <Button url='/events/new' text='Log New Learning' />
-        <Button onClick={logOut} text='Log Out' />
+        <a onClick={logOut}><button>Log Out</button></a>
       </div>
     )
   }
