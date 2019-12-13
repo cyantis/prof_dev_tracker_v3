@@ -2,6 +2,7 @@ import React from 'react'
 
 class NewEvent extends React.Component {
   state = {
+    employee_id: localStorage.user_id,
     name: '',
     date: '',
     category: '',
