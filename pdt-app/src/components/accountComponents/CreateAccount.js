@@ -1,13 +1,13 @@
 import React from 'react'
 
-class CreateAccount extends React.Component {
+class AccountProfile extends React.Component {
   render() {
     return (
-      <div className="CreateAccount">
-        CreateAccount Component
+      <div className="AccountProfile">
+        Edit Your Profile
       </div>
     );
   }
 };
 
-export default CreateAccount
+export default AccountProfile

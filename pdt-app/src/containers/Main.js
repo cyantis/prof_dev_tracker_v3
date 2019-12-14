@@ -3,7 +3,7 @@ import ReactDOM from 'react-dom'
 import { connect } from 'react-redux'
 import { BrowserRouter as Router, Route } from 'react-router-dom'
 
-import LearningLog from '../components/accountComponents/LearningProfile'
+import LearningLog from '../components/accountComponents/LearningLog'
 import ProfileMenu from '../components/layoutComponents/ProfileMenu'
 import TopNav from '../components/layoutComponents/TopNav'
 import Home from '../components/learningEventComponents/Home'
