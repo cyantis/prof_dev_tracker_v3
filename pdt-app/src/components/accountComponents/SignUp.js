@@ -18,8 +18,8 @@ class Signup extends Component {
     password: "",
     email: "",
     name: "",
-    location_id: 2,
-    manager_id: null,
+    location_id: "",
+    manager_id: "",
   }
 
   handleOnChange = event => {
@@ -72,6 +72,23 @@ class Signup extends Component {
               onChange={this.handleOnChange}
               /><br/>
 
+          <label>Where do you work?</label>
+            <select name="location_id" onChange={event => this.handleOnChange(event)} value={this.state.location_id} required>
+              <option value="" disabled selected hidden>Choose a location</option>
+              <option value="1">Charlotte</option>
+              <option value="2">Denver</option>
+              <option value="3">Remote</option>
+            </select><br/>
+
+          <label>Who's Your Manager?</label>
+            <select name="manager_id" onChange={event => this.handleOnChange(event)} value={this.state.manager_id} required>
+              <option value="" disabled selected hidden>Pick Your Boss</option>
+              <option value="1">Chris Green</option>
+              <option value="2">Faruq Rushdie</option>
+              <option value="3">Sarah  Abramov</option>
+              <option value="nil">I'm a manager</option>
+            </select><br/>
+
             <input type='submit' value='SignUp!'/>
           </form>
         </div>
@@ -85,21 +102,6 @@ const mapDispatchToProps = dispatch => ({
 
 export default connect(null, mapDispatchToProps)(Signup)
 
-/*  <label>Where do you work?</label>
-  <select name="location_id" onChange={event => this.handleOnChange(event)} value={this.state.location_id} required>
-    <option value="" disabled selected hidden>Choose a location</option>
-    <option value="1">Charlotte</option>
-    <option value="2">Denver</option>
-    <option value="3">Remote</option>
-  </select><br/>
 
-  <label>Who's Your Manager?</label>
-    <select name="manager_id" onChange={event => this.handleOnChange(event)} value={this.state.manager_id} required>
-      <option value="" disabled selected hidden>Pick Your Boss</option>
-      <option value="1">Chris Brown</option>
-      <option value="2">Faruq Rushdie</option>
-      <option value="3">Sarah  Abramov</option>
-      <option value="nil">I'm a manager</option>
-    </select><br/> */
 
     //https://stackoverflow.com/questions/40844891/react-howto-create-dynamic-select-option-list-from-array

@@ -5,7 +5,7 @@ class SessionsController < ApplicationController
 
     if employee && employee.authenticate(params[:password])
       auth_token = JsonWebToken.encode({user_id: employee.id})
-      manager = employee.manager_id.nil?
+      manager = employee.manager_id.nil? || employee.manager_id == 0
       render json: {
         auth_token: auth_token,
         user_id: employee.id,

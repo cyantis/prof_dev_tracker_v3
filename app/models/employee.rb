@@ -12,7 +12,7 @@ class Employee < ApplicationRecord
   has_secure_password
 
   def manager?
-   manager_id.nil?
+   manager_id.nil? || manager_id == 0
   end
 
  def employee?
