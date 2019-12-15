@@ -7,7 +7,8 @@ class LearningLog extends React.Component {
     events: []
   }
 
-  employeeId = localStorage.getItem("user_id");
+  employeeId = localStorage.getItem("user_id")
+  employeeEventList = []
 
   async getEmployee() {
     const response = await fetch(`/api/v1/employees/${this.employeeId}`)
@@ -18,11 +19,17 @@ class LearningLog extends React.Component {
       bio: data.bio,
       events: data.events,
       })
-      console.log(data.events)
+  }
+
+  async getEvents() {
+    const response = await fetch(`/api/v1/events`)
+    const data = await response.json()
+    this.employeeEventList = data
   }
 
   componentDidMount() {
     this.getEmployee()
+    this.getEvents()
   }
 
   render() {

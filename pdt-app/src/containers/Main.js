@@ -13,25 +13,15 @@ import NewEvent from '../components/learningEventComponents/NewEvent'
 
 class Main extends React.Component {
 
-  async getEvents() {
-    const response = await fetch('/api/v1/events')
-    const data = await response.json()
-    this.props.addLearningEvent(data)
-  }
-
-  componentDidMount() {
-    this.getEvents()
-  }
-
   render() {
     return (
       <div className="Main">
         <ProfileMenu />
         <TopNav />
         <Router>
-          <Route path="/learning" render={props => <LearningLog events={this.props.events} />} />
+          <Route path="/learning" component={LearningLog} />
           <Route path="/events/new" render={props => <NewEvent addLearningEvent={this.props.addLearningEvent} />} />
-          <Route path="/home" render={props => <Home events={this.props.events} />} />
+          <Route path="/home" component={Home} />
         </Router>
       </div>
     );
