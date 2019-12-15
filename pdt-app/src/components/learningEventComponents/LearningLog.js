@@ -4,11 +4,12 @@ import LearningEventList from './LearningEventList'
 class LearningLog extends React.Component {
 
   state = {
-    events: []
+    events: [],
+    managerEmployeeList: []
   }
 
   employeeId = localStorage.getItem("user_id")
-  employeeEventList = []
+  managerEmployeeList = []
 
   async getEmployee() {
     const response = await fetch(`/api/v1/employees/${this.employeeId}`)
@@ -18,13 +19,25 @@ class LearningLog extends React.Component {
       title: data.title,
       bio: data.bio,
       events: data.events,
-      })
+    })
   }
 
   async getEvents() {
     const response = await fetch(`/api/v1/events`)
     const data = await response.json()
-    this.employeeEventList = data
+    this.setState({managerEmployeeList: data})
+  }
+
+  managerList = () => {
+    if(localStorage.getItem("isManager") === "true"){
+      const eList = this.state.managerEmployeeList.filter(event => event.employees[0].manager_id == this.employeeId)
+      return(
+        <div>
+        <h3>Your Team's Learning</h3>
+        <LearningEventList events={eList} />
+        </div>
+      )
+    }
   }
 
   componentDidMount() {
@@ -37,7 +50,9 @@ class LearningLog extends React.Component {
       <div className="LearningLog">
         <h1>{this.state.name}</h1>
         <p>{this.state.title} | {this.state.bio}</p>
+        <h3>Your Learning Log</h3>
         <LearningEventList events={this.state.events} />
+        {this.managerList()}
       </div>
     );
   }
