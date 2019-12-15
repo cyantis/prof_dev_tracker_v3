@@ -20,6 +20,11 @@ class EmployeesController < ApplicationController
     end
   end
 
+  def show
+    employee = Employee.find(params[:id])
+    render json: employee
+  end
+
   def update
     employee = Employee.find(params[:id])
     employee.update(employee_params)

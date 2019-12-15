@@ -3,11 +3,11 @@ import ReactDOM from 'react-dom'
 import { connect } from 'react-redux'
 import { BrowserRouter as Router, Route } from 'react-router-dom'
 
-import LearningLog from '../components/accountComponents/LearningLog'
 import ProfileMenu from '../components/layoutComponents/ProfileMenu'
 import TopNav from '../components/layoutComponents/TopNav'
 import Home from '../components/learningEventComponents/Home'
 import LearningEvent from '../components/learningEventComponents/LearningEvent'
+import LearningLog from '../components/learningEventComponents/LearningLog'
 import NewEvent from '../components/learningEventComponents/NewEvent'
 
 
@@ -29,7 +29,7 @@ class Main extends React.Component {
         <ProfileMenu />
         <TopNav />
         <Router>
-          <Route path="/learning" component={LearningLog} />
+          <Route path="/learning" render={props => <LearningLog events={this.props.events} />} />
           <Route path="/events/new" render={props => <NewEvent addLearningEvent={this.props.addLearningEvent} />} />
           <Route path="/home" render={props => <Home events={this.props.events} />} />
         </Router>
