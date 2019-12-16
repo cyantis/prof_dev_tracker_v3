@@ -35,7 +35,6 @@ class EventsController < ApplicationController
 
   def destroy
     event = Event.find(params[:id])
-    employee = Employee.find(params[:employee_id])
     event.destroy
     head :no_content, status: :ok
     #flash[:message] = "Learning Deleted!"

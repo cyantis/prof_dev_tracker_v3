@@ -9,6 +9,7 @@ import Home from '../components/learningEventComponents/Home'
 import LearningEvent from '../components/learningEventComponents/LearningEvent'
 import LearningLog from '../components/learningEventComponents/LearningLog'
 import NewEvent from '../components/learningEventComponents/NewEvent'
+import EditEvent from '../components/learningEventComponents/EditEvent'
 
 
 class Main extends React.Component {
@@ -20,8 +21,9 @@ class Main extends React.Component {
         <TopNav />
         <Router>
           <Route path="/learning" component={LearningLog} />
+          <Route path="/events/new" component={NewEvent} />
           <Route path="/events/:eventId" component={LearningEvent} />
-          <Route path="/events/new" render={props => <NewEvent addLearningEvent={this.props.addLearningEvent} />} />
+          <Route path="/events/:eventId/edit" component={EditEvent} />
           <Route path="/home" component={Home} />
         </Router>
       </div>

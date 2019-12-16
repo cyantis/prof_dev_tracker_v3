@@ -1,14 +1,18 @@
 import React from 'react'
+
+import Button from '../layoutComponents/Button'
 import CommentsContainer from '../../containers/CommentsContainer'
 
 class LearningEvent extends React.Component {
 
   state = {
     shared: false,
-    comments: []
+    employees: [{}],
+    comments: [],
   }
 
   eventId = window.location.href.split('3000')[1]
+
 
   async getEvent() {
     const response = await fetch(`/api/v1${this.eventId}`)
@@ -24,6 +28,21 @@ class LearningEvent extends React.Component {
     }
   }
 
+  deleteEvent = () => {
+    console.log('DELETE')
+  }
+
+  crudButtons = () => {
+    if(this.state.employees[0].id == localStorage.getItem("user_id")){
+      return(
+        <div>
+          <Button url={`${this.eventId}/edit`} text='Edit'/>
+          <a onClick={this.deleteEvent}><button>Delete</button></a>
+        </div>
+      )
+    }
+  }
+
   componentDidMount() {
     this.getEvent()
   }
@@ -35,6 +54,7 @@ class LearningEvent extends React.Component {
         <p>{this.state.date} | {this.state.category}</p>
         <p>{this.state.description}</p>
         <p><i>{this.shared()}</i></p>
+        {this.crudButtons()}
         <CommentsContainer comments={this.state.comments}/>
       </div>
     );

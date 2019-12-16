@@ -32,9 +32,8 @@ class NewEvent extends React.Component {
     .then(resp => resp.json())
     .then(data => {
       if (data.error) {
-        // Add logic to handle invalid login
+        // Add logic to handle invalid event creation
       } else {
-        console.log(data)
         window.location.href=`/events/${data.id}`
       }
     })

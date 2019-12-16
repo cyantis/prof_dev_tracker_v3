@@ -16,7 +16,6 @@ class CommentsContainer extends React.Component {
     const response = await fetch(`/api/v1/employees`)
     const data = await response.json()
     this.setState({employees: data})
-    console.log(this.state.employees.find(x => x.id === 1).username)
   }
 
   commentsList = () => {
