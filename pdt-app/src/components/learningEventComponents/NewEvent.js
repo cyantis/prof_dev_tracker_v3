@@ -35,7 +35,7 @@ class NewEvent extends React.Component {
         // Add logic to handle invalid login
       } else {
         console.log(data)
-        //window.location.href='/home'
+        window.location.href=`/events/${data.id}`
       }
     })
   }
