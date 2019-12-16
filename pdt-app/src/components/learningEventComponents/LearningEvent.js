@@ -4,6 +4,7 @@ import CommentsContainer from '../../containers/CommentsContainer'
 class LearningEvent extends React.Component {
 
   state = {
+    shared: false,
     comments: []
   }
 
@@ -15,6 +16,14 @@ class LearningEvent extends React.Component {
     this.setState(data)
   }
 
+  shared = () => {
+    if(this.state.shared){
+      return 'Great job sharing this with your team!'
+    }else{
+      return "Don't forget to share this with your team!"
+    }
+  }
+
   componentDidMount() {
     this.getEvent()
   }
@@ -22,7 +31,10 @@ class LearningEvent extends React.Component {
   render() {
     return (
       <div className="LearningEvent">
-        LearningEvent Component
+        <h1>{this.state.name}</h1>
+        <p>{this.state.date} | {this.state.category}</p>
+        <p>{this.state.description}</p>
+        <p><i>{this.shared()}</i></p>
         <CommentsContainer comments={this.state.comments}/>
       </div>
     );

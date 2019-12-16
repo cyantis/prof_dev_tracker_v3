@@ -9,7 +9,7 @@ class CommentsContainer extends React.Component {
   render() {
     return (
       <div className="CommentsContainer">
-      CommentsContainer
+      <h2>Comments</h2>
         <Router>
           <Route path="/comments/new" component={NewComment} />
         </Router>
