@@ -20,6 +20,7 @@ class Main extends React.Component {
         <TopNav />
         <Router>
           <Route path="/learning" component={LearningLog} />
+          <Route path="/events/:eventId" component={LearningEvent} />
           <Route path="/events/new" render={props => <NewEvent addLearningEvent={this.props.addLearningEvent} />} />
           <Route path="/home" component={Home} />
         </Router>

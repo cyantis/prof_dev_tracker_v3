@@ -5,11 +5,6 @@ class EventsController < ApplicationController
     render json: events
   end
 
-  #def new
-  #  @event = Event.new
-  #  @employee = Employee.find(params[:employee_id])
-  #end
-
   def create
     event = Event.create(event_params)
     employee = Employee.find(params[:event][:employee_ids][0])
@@ -22,11 +17,10 @@ class EventsController < ApplicationController
     #end
   end
 
-  #def show
-  #  @event = Event.find(params[:id])
-  #  @employee = Employee.find(session[:user_id])
-  #  render json: @event
-  #end
+  def show
+    event = Event.find(params[:id])
+    render json: event
+  end
 
   #def edit
   #  @event = Event.find(params[:id])
