@@ -7,7 +7,7 @@ class EventsController < ApplicationController
 
   def create
     event = Event.create(event_params)
-    employee = Employee.find(params[:event][:employee_ids][0])
+    #employee = Employee.find(params[:event][:employee_ids][0])
     render json: event
     #if @event.save
     #  flash[:message] = "Learning Logged!"

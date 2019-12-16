@@ -2,7 +2,7 @@ import React from 'react'
 
 class NewEvent extends React.Component {
   state = {
-    employee_id: localStorage.user_id,
+    employee_ids: [localStorage.getItem("user_id")],
     name: '',
     date: '',
     category: '',
@@ -20,9 +20,29 @@ class NewEvent extends React.Component {
     })
   }
 
+  postEvent = event => {
+    return fetch('http://localhost:3001/api/v1/events', {
+    method: "POST",
+    headers: {
+      'Content-Type': 'application/json',
+      Accept: 'application/json',
+    },
+    body: JSON.stringify({event})
+  })
+    .then(resp => resp.json())
+    .then(data => {
+      if (data.error) {
+        // Add logic to handle invalid login
+      } else {
+        console.log(data)
+        //window.location.href='/home'
+      }
+    })
+  }
+
   handleOnSubmit = event => {
     event.preventDefault()
-    this.props.addLearningEvent(this.state)
+    this.postEvent(this.state)
     this.setState({
       name: '',
       date: '',

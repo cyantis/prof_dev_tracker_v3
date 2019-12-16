@@ -1,7 +1,7 @@
-const baseUrl = 'http://localhost:3001/api/v1'
+const baseUrl = 'http://localhost:3001/api/v1/'
 
 export const createEmployee = employee => {
-  return fetch(`${baseUrl}/employees`, {
+  return fetch(`${baseUrl}employees`, {
     method: "POST",
     headers: {
       'Content-Type': 'application/json',
@@ -23,7 +23,7 @@ export const createEmployee = employee => {
 }
 
 export const logIn = loginParams => {
-  return fetch(`${baseUrl}/sessions`, {
+  return fetch(`${baseUrl}sessions`, {
     method: 'POST',
     headers: {
       'Content-Type': 'application/json',
@@ -46,5 +46,5 @@ export const logIn = loginParams => {
 export const logOut = () => {
   localStorage.removeItem("token")
   localStorage.removeItem("user_id")
-  window.location = '/login'
+  window.location = 'login'
 }
