@@ -12,7 +12,6 @@ class CommentsController < ApplicationController
 
   def create
     comment = Comment.create(comment_params)
-    event = Event.find(params[:event_id])
     render json: comment
     #if @comment.save
     #  redirect_to event_path(@event)
