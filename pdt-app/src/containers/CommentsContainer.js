@@ -8,9 +8,27 @@ import EditComment from '../components/learningEventComponents/EditComment'
 
 class CommentsContainer extends React.Component {
 
-  commentsList = () => {
-    return this.props.comments.map(comment => <li key={comment.id}>{comment.content} | {comment.updated_at}</li>)
+  state = {
+    employees: []
+  }
 
+  async getEmployees() {
+    const response = await fetch(`/api/v1/employees`)
+    const data = await response.json()
+    this.setState({employees: data})
+    console.log(this.state.employees.find(x => x.id === 1).username)
+  }
+
+  commentsList = () => {
+    return this.props.comments.map(comment =>
+      <li key={comment.id}>
+        <b>{this.state.employees.find(employee => employee.id === comment.employee_id).username} says:</b> {comment.content} | {comment.updated_at.split('T')[0]}
+      </li>
+    )
+  }
+
+  componentDidMount(){
+    this.getEmployees()
   }
 
   render() {
