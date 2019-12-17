@@ -6,15 +6,14 @@ import CommentsContainer from '../../containers/CommentsContainer'
 class LearningEvent extends React.Component {
 
   state = {
+    eventId: window.location.href.split('3000')[1],
     shared: false,
     employees: [{}],
     comments: [],
   }
 
-  eventId = window.location.href.split('3000')[1]
-
   async getEvent() {
-    const response = await fetch(`/api/v1${this.eventId}`)
+    const response = await fetch(`/api/v1${this.state.eventId}`)
     const data = await response.json()
     this.setState(data)
   }
@@ -28,7 +27,7 @@ class LearningEvent extends React.Component {
   }
 
   deleteEvent = event => {
-    return fetch(`/api/v1${this.eventId}`, {
+    return fetch(`/api/v1${this.state.eventId}`, {
       method: "DELETE",
       headers: {
         'Content-Type': 'application/json',
@@ -43,7 +42,7 @@ class LearningEvent extends React.Component {
     if(this.state.employees[0].id == localStorage.getItem("user_id")){
       return(
         <div>
-          <Button url={`${this.eventId}/edit`} text='Edit'/>
+          <Button url={`${this.state.eventId}/edit`} text='Edit'/>
           <a onClick={event => this.deleteEvent(this.state)}><button>Delete</button></a>
         </div>
       )

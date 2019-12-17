@@ -9,6 +9,8 @@ import EditComment from '../components/learningEventComponents/EditComment'
 class CommentsContainer extends React.Component {
 
   state = {
+    eventId: window.location.href.split('events/')[1],
+    userId: localStorage.getItem('user_id'),
     comments: []
   }
 
@@ -35,13 +37,13 @@ class CommentsContainer extends React.Component {
   render() {
     return (
       <div className="CommentsContainer">
+        <Router>
+          <Route path="events/:eventId/comments/new" component={NewComment} />
+          <Route path="events/:eventId/comments/:commentId/edit" component={EditComment} />
+        </Router>
       <h2>Comments</h2>
       <ul>{this.commentsList()}</ul>
-      <Button url='/comments/new' text='Add a Comment' />
-        <Router>
-          <Route path="/comments/new" component={NewComment} />
-          <Route path="/comments/:commentId/edit" component={EditComment} />
-        </Router>
+      <Button url={`/events/${this.state.eventId}/comments/new`} text='Add a Comment' />
       </div>
     );
   }

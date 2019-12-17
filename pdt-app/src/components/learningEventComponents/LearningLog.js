@@ -4,15 +4,13 @@ import LearningEventList from './LearningEventList'
 class LearningLog extends React.Component {
 
   state = {
+    employeeId: localStorage.getItem("user_id"),
     events: [],
     managerEmployeeList: []
   }
 
-  employeeId = localStorage.getItem("user_id")
-  managerEmployeeList = []
-
   async getEmployee() {
-    const response = await fetch(`/api/v1/employees/${this.employeeId}`)
+    const response = await fetch(`/api/v1/employees/${this.state.employeeId}`)
     const data = await response.json()
     this.setState({
       name: data.name,
@@ -30,7 +28,7 @@ class LearningLog extends React.Component {
 
   managerList = () => {
     if(localStorage.getItem("isManager") === "true"){
-      const eList = this.state.managerEmployeeList.filter(event => event.employees[0].manager_id == this.employeeId)
+      const eList = this.state.managerEmployeeList.filter(event => event.employees[0].manager_id == this.state.employeeId)
       return(
         <div>
         <h3>Your Team's Learning</h3>
