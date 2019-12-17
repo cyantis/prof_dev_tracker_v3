@@ -46,20 +46,16 @@ class CommentsContainer extends React.Component {
   render() {
     return (
       <div className="CommentsContainer">
-        <Router>
-          <Route path="events/:eventId/comments/new" component={NewComment} />
-          <Route path="events/:eventId/comments/:commentId/edit" component={EditComment} />
-        </Router>
-      <h2>Comments</h2>
-      <ul>{this.commentsList()}</ul>
-        {
-          this.state.isActive
-          ? <div>
-              <NewComment />
-              <a onClick={this.handleHide}><button>Cancel</button></a>
-            </div>
-          : <a onClick={this.handleShow}><button>Add a Comment</button></a>
-        }
+        <h2>Comments</h2>
+        <ul>{this.commentsList()}</ul>
+          {
+            this.state.isActive
+            ? <div>
+                <NewComment eventId={this.state.eventId} userId={this.state.userId}/>
+                <a onClick={this.handleHide}><button>Cancel</button></a>
+              </div>
+            : <a onClick={this.handleShow}><button>Add a Comment</button></a>
+          }
       </div>
     );
   }

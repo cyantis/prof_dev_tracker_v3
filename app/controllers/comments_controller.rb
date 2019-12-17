@@ -4,12 +4,6 @@ class CommentsController < ApplicationController
     render json: comments
   end
 
-  #def new
-  #  @comment = Comment.new
-  #  @event = Event.find(params[:event_id])
-  #  @employee = Employee.find_by_id(session[:user_id])
-  #end
-
   def create
     comment = Comment.create(comment_params)
     render json: comment
