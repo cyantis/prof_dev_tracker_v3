@@ -19,17 +19,10 @@ class EventsController < ApplicationController
     render json: event
   end
 
-  #def edit
-  #  @event = Event.find(params[:id])
-  #  @employee = Employee.find(params[:employee_id])
-  #end
-
   def update
     event = Event.find(params[:id])
     event.update(event_params)
     render json: event
-    #flash[:message] = "Learning Updated!"
-    #redirect_to employee_event_path(@employee, @event)
   end
 
   def destroy
