@@ -20,11 +20,11 @@ class Main extends React.Component {
         <ProfileMenu />
         <TopNav />
         <Router>
-          <Route path="/learning" component={LearningLog} />
-          <Route path="/events/new" component={NewEvent} />
-          <Route path="/events/:eventId/edit" component={EditEvent} />
-          <Route path="/events/:eventId" component={LearningEvent} />
           <Route path="/home" component={Home} />
+          <Route exact path="/learning" component={LearningLog} />
+          <Route exact path="/events/new" component={NewEvent} />
+          <Route exact path="/events/:eventId/edit" component={EditEvent} />
+          <Route exact path="/events/:eventId" component={LearningEvent} />
         </Router>
       </div>
     );
