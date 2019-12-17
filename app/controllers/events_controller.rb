@@ -26,7 +26,6 @@ class EventsController < ApplicationController
 
   def update
     event = Event.find(params[:id])
-    employee = Employee.find(params[:event][:employee_ids][0])
     event.update(event_params)
     render json: event
     #flash[:message] = "Learning Updated!"
