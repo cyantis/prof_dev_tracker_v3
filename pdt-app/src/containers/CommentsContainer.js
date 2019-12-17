@@ -9,7 +9,7 @@ import EditComment from '../components/learningEventComponents/EditComment'
 class CommentsContainer extends React.Component {
 
   state = {
-    employees: []
+    comments: []
   }
 
   async getEmployees() {
@@ -19,11 +19,13 @@ class CommentsContainer extends React.Component {
   }
 
   commentsList = () => {
-    return this.props.comments.map(comment =>
-      <li key={comment.id}>
-        <b>{this.state.employees.find(employee => employee.id === comment.employee_id).username} says:</b> {comment.content} | {comment.updated_at.split('T')[0]}
-      </li>
-    )
+      if(this.state.employees){
+      return this.props.comments.map(comment =>
+        <li key={comment.id}>
+          <b>{this.state.employees.find(employee => employee.id == comment.employee_id).username} says:</b> {comment.content} | {comment.updated_at.split('T')[0]}
+          </li>
+      )
+    }
   }
 
   componentDidMount(){

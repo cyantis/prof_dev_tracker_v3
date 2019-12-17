@@ -13,7 +13,6 @@ class LearningEvent extends React.Component {
 
   eventId = window.location.href.split('3000')[1]
 
-
   async getEvent() {
     const response = await fetch(`/api/v1${this.eventId}`)
     const data = await response.json()
@@ -28,8 +27,16 @@ class LearningEvent extends React.Component {
     }
   }
 
-  deleteEvent = () => {
-    console.log('DELETE')
+  deleteEvent = event => {
+    return fetch(`/api/v1${this.eventId}`, {
+      method: "DELETE",
+      headers: {
+        'Content-Type': 'application/json',
+        Accept: 'application/json',
+      },
+      body: JSON.stringify({event})
+    })
+      .then(resp => window.location.href='/learning')
   }
 
   crudButtons = () => {
@@ -37,7 +44,7 @@ class LearningEvent extends React.Component {
       return(
         <div>
           <Button url={`${this.eventId}/edit`} text='Edit'/>
-          <a onClick={this.deleteEvent}><button>Delete</button></a>
+          <a onClick={event => this.deleteEvent(this.state)}><button>Delete</button></a>
         </div>
       )
     }

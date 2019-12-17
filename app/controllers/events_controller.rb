@@ -37,8 +37,6 @@ class EventsController < ApplicationController
     event = Event.find(params[:id])
     event.destroy
     head :no_content, status: :ok
-    #flash[:message] = "Learning Deleted!"
-    #redirect_to employee_path(@employee)
   end
 
   private

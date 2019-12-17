@@ -21,8 +21,8 @@ class Main extends React.Component {
         <TopNav />
         <Router>
           <Route path="/learning" component={LearningLog} />
-          <Route path="/events/new" component={NewEvent} />
           <Route path="/events/:eventId" component={LearningEvent} />
+          <Route path="/events/new" component={NewEvent} />
           <Route path="/events/:eventId/edit" component={EditEvent} />
           <Route path="/home" component={Home} />
         </Router>
