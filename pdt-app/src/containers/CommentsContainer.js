@@ -11,7 +11,8 @@ class CommentsContainer extends React.Component {
   state = {
     eventId: window.location.href.split('events/')[1],
     userId: localStorage.getItem('user_id'),
-    comments: []
+    comments: [],
+    isActive: false
   }
 
   async getEmployees() {
@@ -30,6 +31,14 @@ class CommentsContainer extends React.Component {
     }
   }
 
+  handleShow = ()=>{
+    this.setState({isActive: true})
+  }
+
+  handleHide = () =>{
+    this.setState({isActive: false})
+  }
+
   componentDidMount(){
     this.getEmployees()
   }
@@ -43,7 +52,14 @@ class CommentsContainer extends React.Component {
         </Router>
       <h2>Comments</h2>
       <ul>{this.commentsList()}</ul>
-      <Button url={`/events/${this.state.eventId}/comments/new`} text='Add a Comment' />
+        {
+          this.state.isActive
+          ? <div>
+              <NewComment />
+              <a onClick={this.handleHide}><button>Cancel</button></a>
+            </div>
+          : <a onClick={this.handleShow}><button>Add a Comment</button></a>
+        }
       </div>
     );
   }
