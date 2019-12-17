@@ -1,8 +1,7 @@
-import React, {Component} from 'react'
-import {connect} from 'react-redux'
-import {createEmployee} from '../../reducers/actions'
+import React, { Component } from 'react'
+import { createEmployee } from '../../actions'
 
-class Signup extends Component {
+class SignUp extends Component {
 
   async getEmployees() {
     const response = await fetch('/api/v1/employees')
@@ -30,7 +29,7 @@ class Signup extends Component {
 
   handleSubmit = event => {
     event.preventDefault()
-    this.props.createEmployee(this.state)
+    createEmployee(this.state)
   }
 
   render() {
@@ -96,12 +95,6 @@ class Signup extends Component {
   }
 }
 
-const mapDispatchToProps = dispatch => ({
-  createEmployee: userInfo => dispatch(createEmployee(userInfo))
-})
+export default SignUp
 
-export default connect(null, mapDispatchToProps)(Signup)
-
-
-
-    //https://stackoverflow.com/questions/40844891/react-howto-create-dynamic-select-option-list-from-array
+//https://stackoverflow.com/questions/40844891/react-howto-create-dynamic-select-option-list-from-array

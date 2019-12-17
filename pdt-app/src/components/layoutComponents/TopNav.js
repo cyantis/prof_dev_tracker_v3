@@ -1,6 +1,6 @@
 import React from 'react'
 import Button from './Button'
-import {logOut} from '../../reducers/actions'
+import { logOut } from '../../actions'
 
 class TopNav extends React.Component {
 

@@ -1,5 +1,4 @@
 import React from 'react'
-import { connect } from 'react-redux'
 import {
   BrowserRouter as Router,
   Route,
@@ -7,7 +6,9 @@ import {
   Redirect,
   withRouter
 } from 'react-router-dom'
-import './App.css';
+
+import './App.css'
+
 import Login from './components/accountComponents/Login'
 import SignUp from './components/accountComponents/SignUp'
 import Footer from './components/layoutComponents/Footer'

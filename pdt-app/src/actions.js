@@ -1,7 +1,7 @@
 const baseUrl = 'http://localhost:3001/api/v1/'
 
 export const createEmployee = employee => {
-  return fetch(`${baseUrl}employees`, {
+  fetch(`${baseUrl}employees`, {
     method: "POST",
     headers: {
       'Content-Type': 'application/json',
@@ -23,7 +23,7 @@ export const createEmployee = employee => {
 }
 
 export const logIn = loginParams => {
-  return fetch(`${baseUrl}sessions`, {
+  fetch(`${baseUrl}sessions`, {
     method: 'POST',
     headers: {
       'Content-Type': 'application/json',

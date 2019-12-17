@@ -6,8 +6,8 @@ class EditComment extends React.Component {
       <div className="EditComment">
         EditComment Component
       </div>
-    );
+    )
   }
-};
+}
 
 export default EditComment

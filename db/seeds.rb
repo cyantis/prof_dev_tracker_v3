@@ -23,7 +23,7 @@ Event.create({ name: "Pragmatic Programmer", date: "2019-05-05", category: "Book
 Event.create({ name: "HackerCon", date: "2019-06-07", category: "Conference Presenter", description: "I presented on hacking", shared: 1, employee_ids: [7] })
 Event.create({ name: "Graph QL 101", date: "2019-07-08", category: "In Person Course", description: "Course at General Assembly", shared: 0, employee_ids: [4] })
 Event.create({ name: "What the Heck is Collection Select?", date: "2019-08-06", category: "Tutorial", description: "Online tutorial", shared: 0, employee_ids: [5] })
-Event.create({ name: "Personal website", date: "2019-23-08", category: "Other", description: "Rebuilt my personal website with React.js", shared: 1, employee_ids: [6] })
+Event.create({ name: "Personal website", date: "2019-08-23", category: "Other", description: "Rebuilt my personal website with React.js", shared: 1, employee_ids: [6] })
 Event.create({ name: "Denver Startup Week", date: "2019-09-01", category: "Conference Attendee", description: "Startup crawl", shared: 0, employee_ids: [1] })
 Event.create({ name: "Denver Startup Week", date: "2019-09-15", category: "Conference Presenter", description: "Vue.js presentation", shared: 2, employee_ids: [1] })
 Event.create({ name: "Think Like a Computer Programmer", date: "2019-09-28", category: "Book", description: "A good book", shared: 1, employee_ids: [7] })

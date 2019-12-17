@@ -90,8 +90,8 @@ class NewEvent extends React.Component {
             <input type="submit" value="Log Learning!"></input>
         </form>
       </div>
-    );
+    )
   }
-};
+}
 
 export default NewEvent

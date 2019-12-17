@@ -1,6 +1,5 @@
 import React from 'react'
-import {connect} from 'react-redux'
-import {logIn} from '../../reducers/actions'
+import { logIn } from '../../actions'
 import SignUp from './SignUp'
 
 class Login extends React.Component {
@@ -18,7 +17,7 @@ class Login extends React.Component {
 
   handleSubmit = event => {
     event.preventDefault()
-    this.props.logIn(this.state)
+    logIn(this.state)
   }
 
   render() {
@@ -49,12 +48,8 @@ class Login extends React.Component {
         <h3>--- OR ---</h3>
         <SignUp />
       </div>
-    );
+    )
   }
-};
+}
 
-const mapDispatchToProps = dispatch => ({
-  logIn: loginParams => dispatch(logIn(loginParams))
-})
-
-export default connect(null, mapDispatchToProps)(Login)
+export default Login

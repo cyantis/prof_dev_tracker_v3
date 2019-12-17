@@ -27,14 +27,8 @@ class Main extends React.Component {
           <Route exact path="/events/:eventId" component={LearningEvent} />
         </Router>
       </div>
-    );
+    )
   }
-};
+}
 
-const mapStateToProps = ({ events }) => ({ events })
-
-const mapDispatchToProps = dispatch => ({
-  addLearningEvent: learning => dispatch({ type: 'ADD_EVENT', learning }),
-})
-
-export default connect(mapStateToProps, mapDispatchToProps)(Main)
+export default Main

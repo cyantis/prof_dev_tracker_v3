@@ -6,8 +6,8 @@ class ProfileMenu extends React.Component {
       <div className="ProfileMenu">
         <h3>Your Profile</h3>
       </div>
-    );
+    )
   }
-};
+}
 
 export default ProfileMenu

@@ -63,8 +63,8 @@ class LearningEvent extends React.Component {
         {this.crudButtons()}
         <CommentsContainer comments={this.state.comments}/>
       </div>
-    );
+    )
   }
-};
+}
 
 export default LearningEvent

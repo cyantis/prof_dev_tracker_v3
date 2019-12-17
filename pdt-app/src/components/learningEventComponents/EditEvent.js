@@ -89,8 +89,8 @@ class EditEvent extends React.Component {
               <input type="submit" value="Edit Learning!"></input>
           </form>
       </div>
-    );
+    )
   }
-};
+}
 
 export default EditEvent

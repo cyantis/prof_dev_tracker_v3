@@ -50,8 +50,8 @@ class NewComment extends React.Component {
           <input type="submit" value="Submit Comment!"></input>
         </form>
       </div>
-    );
+    )
   }
-};
+}
 
 export default NewComment

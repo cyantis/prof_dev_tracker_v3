@@ -52,8 +52,8 @@ class LearningLog extends React.Component {
         <LearningEventList events={this.state.events} />
         {this.managerList()}
       </div>
-    );
+    )
   }
-};
+}
 
 export default LearningLog
