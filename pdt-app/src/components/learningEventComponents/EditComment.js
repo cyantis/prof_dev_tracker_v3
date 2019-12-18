@@ -39,6 +39,18 @@ class EditComment extends React.Component {
     })
   }
 
+  deleteComment = comment => {
+    return fetch(`http://localhost:3001/api/v1/events/${this.state.event_id}/comments/${this.state.id}`, {
+      method: "DELETE",
+      headers: {
+        'Content-Type': 'application/json',
+        Accept: 'application/json',
+      },
+      body: JSON.stringify({comment})
+    })
+      .then(resp => window.location.href=`/events/${this.state.event_id}/`)
+  }
+
   render() {
     return (
       <div className="NewComment">
@@ -47,7 +59,8 @@ class EditComment extends React.Component {
             Edit Your Comment
             <textarea name="content" onChange={event => this.handleOnChange(event)} value={this.state.content}></textarea>
           </p>
-          <input type="submit" value="Edit Comment!"></input>
+          <input type="submit" value="Edit Comment"></input>
+          <a onClick={event => this.deleteComment(this.state)}><button>Delete Comment</button></a>
         </form>
       </div>
     )
