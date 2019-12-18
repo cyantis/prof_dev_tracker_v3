@@ -1,5 +1,7 @@
 import React from 'react'
 
+import Button from '../layoutComponents/Button'
+
 class NewEvent extends React.Component {
   state = {
     employee_ids: [localStorage.getItem("user_id")],
@@ -88,6 +90,7 @@ class NewEvent extends React.Component {
               <input name="shared" type="checkbox" onChange={event => this.handleOnChange(event)} value={this.state.shared}></input>
             </p>
             <input type="submit" value="Log Learning!"></input>
+            <Button url='/learning' text='Cancel' />
         </form>
       </div>
     )

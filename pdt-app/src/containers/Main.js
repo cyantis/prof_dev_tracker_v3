@@ -1,6 +1,4 @@
 import React from 'react'
-import ReactDOM from 'react-dom'
-import { connect } from 'react-redux'
 import { BrowserRouter as Router, Route } from 'react-router-dom'
 
 import ProfileMenu from '../components/layoutComponents/ProfileMenu'
