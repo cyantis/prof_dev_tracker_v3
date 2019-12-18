@@ -15,8 +15,8 @@ class Main extends React.Component {
   render() {
     return (
       <div className="Main">
-        <ProfileMenu />
         <TopNav />
+        <ProfileMenu />
         <Router>
           <Route path="/home" component={Home} />
           <Route exact path="/learning" component={LearningLog} />

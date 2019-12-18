@@ -17,6 +17,7 @@ export const createEmployee = employee => {
         localStorage.setItem("token", data.auth_token)
         localStorage.setItem("user_id", data.user_id)
         localStorage.setItem("isManager", data.manager)
+        localStorage.setItem("user", data.name)
         window.location.href='/home'
       }
     })
@@ -38,6 +39,7 @@ export const logIn = loginParams => {
       localStorage.setItem("token", data.auth_token)
       localStorage.setItem("user_id", data.user_id)
       localStorage.setItem("isManager", data.manager)
+      localStorage.setItem("user", data.name)
       window.location = '/home'
     }
   })

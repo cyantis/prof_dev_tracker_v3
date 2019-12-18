@@ -1,6 +1,5 @@
 import React from 'react'
 import Button from './Button'
-import { logOut } from '../../actions'
 
 class TopNav extends React.Component {
 
@@ -10,7 +9,6 @@ class TopNav extends React.Component {
         <Button url='/learning' text='Your Learning Log' />
         <Button url='/events/new' text='Log New Learning' />
         <Button url='/home' text='Home' />
-        <a onClick={logOut}><button>Log Out</button></a>
       </div>
     )
   }

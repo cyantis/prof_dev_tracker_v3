@@ -9,6 +9,7 @@ class SessionsController < ApplicationController
       render json: {
         auth_token: auth_token,
         user_id: employee.id,
+        name: employee.name,
         manager: manager,
         }, status: :ok
     else
