@@ -25,7 +25,7 @@ class CommentsContainer extends React.Component {
     if(this.state.employees){
       return this.props.comments.map(comment =>
         <li key={comment.id}>
-          <b>{this.state.employees.find(employee => employee.id == comment.employee_id).username} says:</b> {comment.content} | {comment.updated_at.split('T')[0]}{this.state.userId == comment.employee_id ? <a onClick={event => this.handleEditOn(comment.id, comment.content)}><button>Edit</button></a> : null}
+          <b>{this.state.employees.find(employee => employee.id == comment.employee_id).username} says:</b> {comment.content} | {comment.updated_at.split('T')[0]}{this.state.userId == comment.employee_id && !this.state.editComment ? <a onClick={event => this.handleEditOn(comment.id, comment.content)}><button>Edit</button></a> : null}
         </li>
       )
     }
@@ -74,6 +74,7 @@ class CommentsContainer extends React.Component {
               </div>
             : null
           }
+          <br/>
           {
             this.state.newComment
             ? <div>
