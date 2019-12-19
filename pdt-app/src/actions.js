@@ -12,7 +12,7 @@ export const createEmployee = employee => {
     .then(resp => resp.json())
     .then(data => {
       if (data.error) {
-        // Add logic to handle invalid login
+        alert("All fields must be filled out. Please try again.")
       } else {
         localStorage.setItem("token", data.auth_token)
         localStorage.setItem("user_id", data.user_id)
@@ -33,8 +33,8 @@ export const logIn = loginParams => {
     body: JSON.stringify(loginParams)
   }).then(res => res.json())
   .then(data => {
-    if (data.message) {
-      // Add logic to handle invalid login
+    if (data.error) {
+      alert("Incorrect username or password. Please try again.")
     } else {
       localStorage.setItem("token", data.auth_token)
       localStorage.setItem("user_id", data.user_id)
