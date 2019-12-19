@@ -3,10 +3,10 @@ import React from 'react'
 class AccountProfile extends React.Component {
 
   state = {
-    employeeId: localStorage.getItem("user_id"),
+    id: localStorage.getItem("user_id"),
   }
 
-  fetchUrl = `/api/v1/employees/${this.state.employeeId}`
+  fetchUrl = `/api/v1/employees/${this.state.id}`
 
   async getEmployee() {
     const response = await fetch(this.fetchUrl)
@@ -18,7 +18,6 @@ class AccountProfile extends React.Component {
       name: data.name,
       title: data.title,
       bio: data.bio,
-      events: data.events,
     })
   }
 
@@ -36,6 +35,7 @@ class AccountProfile extends React.Component {
         if (data.error) {
           // Add logic to handle invalid login
         } else {
+          console.log(data)
           //localStorage.setItem("isManager", data.manager)
           //localStorage.setItem("user", data.name)
           window.location.href='/learning'
