@@ -19,10 +19,12 @@ class LearningEvent extends React.Component {
   }
 
   shared = () => {
-    if(this.state.shared){
-      return 'Great job sharing this with your team!'
-    }else{
-      return "Don't forget to share this with your team!"
+    if(this.state.employees[0].id == localStorage.getItem("user_id")){
+      if(this.state.shared){
+        return 'Great job sharing this with your team!'
+      }else{
+        return "Don't forget to share this with your team!"
+      }
     }
   }
 
