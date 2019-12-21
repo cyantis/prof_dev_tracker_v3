@@ -6,7 +6,8 @@ class LearningLog extends React.Component {
   state = {
     employeeId: localStorage.getItem("user_id"),
     events: [],
-    managerEmployeeList: []
+    managerEmployeeList: [],
+    employees: [],
   }
 
   async getEmployee() {
@@ -18,6 +19,12 @@ class LearningLog extends React.Component {
       bio: data.bio,
       events: data.events,
     })
+  }
+
+  async getEmployees() {
+    const response = await fetch(`/api/v1/employees`)
+    const data = await response.json()
+    this.setState({employees: data})
   }
 
   async getEvents() {
@@ -32,7 +39,7 @@ class LearningLog extends React.Component {
       return(
         <div>
         <h3>Your Team's Learning</h3>
-        <LearningEventList events={eList} />
+        <LearningEventList events={eList} employees={this.state.employees}/>
         </div>
       )
     }
@@ -40,6 +47,7 @@ class LearningLog extends React.Component {
 
   componentDidMount() {
     this.getEmployee()
+    this.getEmployees()
     this.getEvents()
   }
 
