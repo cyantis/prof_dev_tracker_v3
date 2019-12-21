@@ -12,13 +12,27 @@ import EditEvent from '../components/learningEventComponents/EditEvent'
 
 class Main extends React.Component {
 
+  state = {
+    employees: []
+  }
+
+  async getEmployees() {
+    const response = await fetch(`/api/v1/employees`)
+    const data = await response.json()
+    this.setState({employees: data})
+  }
+
+  componentDidMount(){
+    this.getEmployees()
+  }
+
   render() {
     return (
       <div className="Main">
         <TopNav />
         <ProfileMenu />
         <Router>
-          <Route path="/home" component={Home} />
+          <Route path="/home" render={(props) => <Home employees={this.state.employees}/>} />
           <Route exact path="/learning" component={LearningLog} />
           <Route exact path="/events/new" component={NewEvent} />
           <Route exact path="/events/:eventId/edit" component={EditEvent} />
