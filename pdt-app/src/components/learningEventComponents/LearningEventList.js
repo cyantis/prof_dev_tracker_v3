@@ -10,8 +10,7 @@ const LearningEventList = props =>
         }
         <a href={`/events/${event.id}`}>
           {event.name}
-        </a>
-        {event.date}
+        </a> {event.date}
       </li>
     )
 
