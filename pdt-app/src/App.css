@@ -1,12 +1,32 @@
+body {
+  font-family: 'Fira Sans', sans-serif;
+  background-color: #1B8085;
+}
+
+a {
+  color: #1B8085;
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
 .Main {
   text-align: center;
+  background-color: #F2F2F2;
+  opacity: 93%;
   width: 60%;
   margin: 0 auto;
+  padding: 3em;
+  border-radius: 5px;
 }
 
 .Header {
   text-align: center;
+  color: #fff;
 }
+
 
 .Login, .SignUp {
   text-align: center;
@@ -25,7 +45,6 @@
 
 .Footer {
   text-align: center;
-  background-color: #000;
   color: #fff;
   margin: 1em 0 0 0;
   padding: .25em;
