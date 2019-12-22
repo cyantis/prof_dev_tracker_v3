@@ -21,7 +21,9 @@ class Home extends React.Component {
     return(
       <div className="Home">
         <h2>Who's Learning What?</h2>
-        <LearningEventList events={this.state.events} employees={this.props.employees} />
+        <div className="HomeList">
+          <LearningEventList events={this.state.events} employees={this.props.employees} />
+        </div>
       </div>
     )}
   }

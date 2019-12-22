@@ -1,22 +1,32 @@
-.App {
+.Main {
+  text-align: center;
+  width: 60%;
+  margin: 0 auto;
+}
+
+.Header {
   text-align: center;
 }
 
-.App-logo {
-  height: 40vmin;
+.Login, .SignUp {
+  text-align: center;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+.HomeList {
+  text-align: left;
+  padding-left: 14em;
+  list-style-type: none;
 }
 
-.App-link {
-  color: #09d3ac;
+.NewEvent form {
+  text-align: left;
+  padding-left: 14em;
+}
+
+.Footer {
+  text-align: center;
+  background-color: #000;
+  color: #fff;
+  margin: 1em 0 0 0;
+  padding: .25em;
 }
