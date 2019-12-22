@@ -12,14 +12,18 @@ class ProfileMenu extends React.Component {
     isActive: false,
   }
 
-  handleShow = ()=>{
-    this.setState({isActive: !this.state.isActive})
+  handleEnter = ()=>{
+    this.setState({isActive: true})
+  }
+
+  handleLeave = ()=>{
+    this.setState({isActive: false})
   }
 
   render() {
     return (
-      <div className="ProfileMenu">
-        <a onClick={this.handleShow}>{this.state.user}</a>
+      <div className="ProfileMenu" onMouseEnter={this.handleEnter} onMouseLeave={this.handleLeave}>
+        <h3>{this.state.user}</h3>
         {this.state.isActive
           ? <div>
               <Button url='/profile' text='Edit Your Profile' />
