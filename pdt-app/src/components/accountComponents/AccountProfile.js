@@ -130,6 +130,7 @@ class AccountProfile extends React.Component {
           </select><br/>
 
           <input type='submit' value='Edit Profile!'/>
+          <a href='/learning'><button>Cancel</button></a>
         </form>
       </div>
     );

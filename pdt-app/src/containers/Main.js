@@ -1,8 +1,8 @@
 import React from 'react'
 import { BrowserRouter as Router, Route } from 'react-router-dom'
 
+import AccountProfile from '../components/accountComponents/AccountProfile'
 import ProfileMenu from '../components/layoutComponents/ProfileMenu'
-import TopNav from '../components/layoutComponents/TopNav'
 import Home from '../components/learningEventComponents/Home'
 import LearningEvent from '../components/learningEventComponents/LearningEvent'
 import LearningLog from '../components/learningEventComponents/LearningLog'
@@ -29,7 +29,6 @@ class Main extends React.Component {
   render() {
     return (
       <div className="Main">
-        <TopNav />
         <ProfileMenu />
         <Router>
           <Route path="/home" render={(props) => <Home employees={this.state.employees}/>} />
@@ -37,10 +36,10 @@ class Main extends React.Component {
           <Route exact path="/events/new" component={NewEvent} />
           <Route exact path="/events/:eventId/edit" component={EditEvent} />
           <Route exact path="/events/:eventId" component={LearningEvent} />
+          <Route path="/profile" component={AccountProfile} />
         </Router>
       </div>
     )
   }
 }
-
 export default Main

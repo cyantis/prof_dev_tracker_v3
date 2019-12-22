@@ -1,15 +1,20 @@
 body {
   font-family: 'Fira Sans', sans-serif;
-  background-color: #1B8085;
+  background-color: #138A86;
 }
 
 a {
-  color: #1B8085;
+  color: #138A86;
   text-decoration: none;
 }
 
 a:hover {
   text-decoration: underline;
+}
+
+h2 {
+  padding-bottom: .5em;
+  border-bottom: thin solid;
 }
 
 .Main {
@@ -18,13 +23,14 @@ a:hover {
   opacity: 93%;
   width: 60%;
   margin: 0 auto;
-  padding: 3em;
+  padding: .5em 3em 2em 3em;
   border-radius: 5px;
 }
 
 .Header {
   text-align: center;
   color: #fff;
+  padding: 1em;
 }
 
 
@@ -41,6 +47,7 @@ a:hover {
 .NewEvent form {
   text-align: left;
   padding-left: 14em;
+  line-height: 1.25em;
 }
 
 .Footer {
@@ -48,4 +55,41 @@ a:hover {
   color: #fff;
   margin: 1em 0 0 0;
   padding: .25em;
+}
+
+button, input {
+  font-size: 100%;
+  font-family: inherit;
+  line-height: 1.5em;
+  padding: .25em;
+  margin: .25em;
+  border-radius: 3px;
+  text-align: center;
+}
+
+button:hover, input:hover {
+  font-weight: bold;
+  color: #138A86;
+}
+
+select {
+  font-family: inherit;
+}
+
+.ProfileMenu {
+  position: absolute;
+  top: 3%;
+  right: 20%;
+  background-color: #F2F2F2;
+  border-radius: 5px;
+  padding: .5em;
+}
+
+.TopNav {
+  clear: right;
+}
+
+.Avatar {
+  border-radius: 2px;
+  width: 3em;
 }
