@@ -1,7 +1,7 @@
-import React, { Component } from 'react'
+import React from 'react'
 import { createEmployee } from '../../actions'
 
-class SignUp extends Component {
+class SignUp extends React.Component {
 
   state = {
     username: "",
