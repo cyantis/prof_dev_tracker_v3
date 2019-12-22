@@ -39,7 +39,9 @@ class LearningLog extends React.Component {
       return(
         <div>
         <h3>Your Team's Learning</h3>
-        <LearningEventList events={eList} employees={this.state.employees}/>
+        <div className="LearningList">
+          <LearningEventList events={eList} employees={this.state.employees}/>
+        </div>
         </div>
       )
     }
@@ -54,10 +56,12 @@ class LearningLog extends React.Component {
   render() {
     return (
       <div className="LearningLog">
-        <h1>{this.state.name}</h1>
+        <h2>{this.state.name}</h2>
         <p>{this.state.title} | {this.state.bio}</p>
         <h3>Your Learning Log</h3>
-        <LearningEventList events={this.state.events} />
+        <div className="LearningList">
+          <LearningEventList events={this.state.events} />
+        </div>
         {this.managerList()}
       </div>
     )
