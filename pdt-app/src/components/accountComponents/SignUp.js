@@ -3,15 +3,6 @@ import { createEmployee } from '../../actions'
 
 class SignUp extends Component {
 
-  async getEmployees() {
-    const response = await fetch('/api/v1/employees')
-    const data = await response.json()
-  }
-
-  componentDidMount() {
-    this.getEmployees()
-  }
-
   state = {
     username: "",
     password: "",
@@ -19,6 +10,11 @@ class SignUp extends Component {
     name: "",
     location_id: "",
     manager_id: "",
+  }
+
+  async getEmployees() {
+    const response = await fetch('/api/v1/employees')
+    const data = await response.json()
   }
 
   handleOnChange = event => {
@@ -30,6 +26,10 @@ class SignUp extends Component {
   handleSubmit = event => {
     event.preventDefault()
     createEmployee(this.state)
+  }
+
+  componentDidMount() {
+    this.getEmployees()
   }
 
   render() {
