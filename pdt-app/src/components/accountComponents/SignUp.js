@@ -35,8 +35,8 @@ class SignUp extends React.Component {
   render() {
     return (
       <div className="SignUp">
+        <h1>Create an Account</h1>
         <form onSubmit={this.handleSubmit}>
-          <h1>Create an Account</h1>
 
           <label>Username</label>
           <input

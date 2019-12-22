@@ -17,6 +17,25 @@ h2 {
   border-bottom: thin solid;
 }
 
+select {
+  font-family: inherit;
+}
+
+button, input[type="submit"] {
+  font-size: 100%;
+  font-family: inherit;
+  line-height: 1.5em;
+  padding: .25em;
+  margin: .25em;
+  border-radius: 3px;
+  text-align: center;
+}
+
+button:hover, input[type="submit"]:hover {
+  font-weight: bold;
+  color: #138A86;
+}
+
 .Main {
   text-align: center;
   background-color: #F2F2F2;
@@ -33,15 +52,26 @@ h2 {
   padding: 1em;
 }
 
-
-.Login, .SignUp {
-  text-align: center;
-}
-
 .LearningList {
   text-align: left;
   padding-left: 14em;
   list-style-type: none;
+}
+
+.Login, .SignUp {
+  background-color: #F2F2F2;
+  opacity: 93%;
+  width: 60%;
+  margin: 0 auto;
+  padding: 1em;
+  border-radius: 5px;
+  text-align: center;
+}
+
+.Login form, .SignUp form {
+  text-align: left;
+  padding-left: 17em;
+  line-height: 1.25em;
 }
 
 .NewEvent form {
@@ -57,30 +87,12 @@ h2 {
   padding: .25em;
 }
 
-button, input {
-  font-size: 100%;
-  font-family: inherit;
-  line-height: 1.5em;
-  padding: .25em;
-  margin: .25em;
-  border-radius: 3px;
-  text-align: center;
-}
-
-button:hover, input:hover {
-  font-weight: bold;
-  color: #138A86;
-}
-
-select {
-  font-family: inherit;
-}
-
 .ProfileMenu {
   position: absolute;
   top: 3%;
   right: 20%;
   background-color: #F2F2F2;
+  border: thin solid gray;
   border-radius: 5px;
   padding: .5em;
 }

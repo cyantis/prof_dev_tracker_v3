@@ -35,7 +35,10 @@ class Main extends React.Component {
           <Route exact path="/learning" component={LearningLog} />
           <Route exact path="/events/new" component={NewEvent} />
           <Route exact path="/events/:eventId/edit" component={EditEvent} />
-          <Route exact path="/events/:eventId" component={LearningEvent} />
+          {window.location.href == "http://localhost:3000/events/new"
+            ? null
+            : <Route exact path="/events/:eventId" component={LearningEvent} />
+          }
           <Route path="/profile" component={AccountProfile} />
         </Router>
       </div>

@@ -68,8 +68,7 @@ class NewEvent extends React.Component {
               <input name="date" type="date" onChange={event => this.handleOnChange(event)} value={this.state.date}></input>
             </p>
             <p>
-              Learning Type
-              <select name="category" onChange={event => this.handleOnChange(event)} value={this.state.category} required>
+                Learning Type <select name="category" onChange={event => this.handleOnChange(event)} value={this.state.category} required>
                 <option value="" disabled selected hidden>Choose a learning category</option>
                 <option value="Book">Book</option>
                 <option value="Conference Attendee">Conference Attendee</option>
@@ -82,8 +81,7 @@ class NewEvent extends React.Component {
               </select>
             </p>
             <p>
-              Tell us about it
-              <textarea name="description" onChange={event => this.handleOnChange(event)} value={this.state.description}></textarea>
+              Tell us about it <textarea name="description" onChange={event => this.handleOnChange(event)} value={this.state.description}></textarea>
             </p>
             <p>
               Have you shared this with your team?
