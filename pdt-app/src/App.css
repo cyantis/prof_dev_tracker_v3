@@ -21,7 +21,8 @@ select {
   font-family: inherit;
 }
 
-button, input[type="submit"] {
+button,
+input[type="submit"] {
   font-size: 100%;
   font-family: inherit;
   line-height: 1.5em;
@@ -31,7 +32,8 @@ button, input[type="submit"] {
   text-align: center;
 }
 
-button:hover, input[type="submit"]:hover {
+button:hover,
+input[type="submit"]:hover {
   font-weight: bold;
   color: #138A86;
 }
@@ -58,20 +60,43 @@ button:hover, input[type="submit"]:hover {
   list-style-type: none;
 }
 
-.Login, .SignUp {
+.Login,
+.SignUp,
+.AccountProfile {
   background-color: #F2F2F2;
   opacity: 93%;
-  width: 60%;
+  width: 40%;
   margin: 0 auto;
   padding: 1em;
   border-radius: 5px;
   text-align: center;
+
 }
 
-.Login form, .SignUp form {
+.AccountProfile form {
   text-align: left;
-  padding-left: 17em;
+  font-size: 1.15em;
+  line-height: 1.5em;
+}
+
+.Login form,
+.SignUp form {
+  text-align: left;
+  padding-left: 7em;
+  font-size: 1.25em;
+}
+
+.Login input,
+.SignUp input,
+.SignUp select,
+.AccountProfile select,
+.AccountProfile textarea {
+  margin: .5em;
   line-height: 1.25em;
+}
+
+.Login h2, .SignUp h2 {
+  border: none;
 }
 
 .NewEvent form {

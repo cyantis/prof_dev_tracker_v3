@@ -24,7 +24,7 @@ class Login extends React.Component {
     return (
       <div>
         <div className="Login">
-            <h1>Login</h1>
+            <h2>Login</h2>
             <form onSubmit={this.handleSubmit}>
 
               <label>Username</label>
@@ -45,7 +45,7 @@ class Login extends React.Component {
                 /><br/>
 
               <input type='submit' value='LogIn!'/>
-            </form><br/>
+            </form>
             <h3>--- OR ---</h3>
           </div>
         <SignUp />
