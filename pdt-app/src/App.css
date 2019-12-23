@@ -1,6 +1,6 @@
 body {
   font-family: 'Fira Sans', sans-serif;
-  background-color: #138A86;
+  /*background-color: #138A86;*/
 }
 
 a {
@@ -46,11 +46,12 @@ input[type="submit"]:hover {
   margin: 0 auto;
   padding: .5em 3em 2em 3em;
   border-radius: 5px;
+  border: thin solid;
 }
 
 .Header {
   text-align: center;
-  color: #fff;
+  color: #138A86;
   padding: 1em;
 }
 
@@ -60,21 +61,25 @@ input[type="submit"]:hover {
   list-style-type: none;
 }
 
+.Signin {
+  border: thin solid;
+  width: 40%;
+  margin: 0 auto;
+  border-radius: 5px;
+  background-color: #F2F2F2;
+  opacity: 93%;
+}
+
 .Login,
 .SignUp,
 .AccountProfile {
-  background-color: #F2F2F2;
-  opacity: 93%;
-  width: 40%;
-  margin: 0 auto;
-  padding: 1em;
-  border-radius: 5px;
   text-align: center;
-
+  padding-bottom: 1em;
 }
 
 .AccountProfile form {
   text-align: left;
+  padding-left: 15em;
   font-size: 1.15em;
   line-height: 1.5em;
 }
@@ -107,7 +112,7 @@ input[type="submit"]:hover {
 
 .Footer {
   text-align: center;
-  color: #fff;
+  color: #138A86;
   margin: 1em 0 0 0;
   padding: .25em;
 }
