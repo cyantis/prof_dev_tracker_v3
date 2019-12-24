@@ -9,11 +9,11 @@ Event.create({ name: "test_event_6", category: "Tutorial"})
 Event.create({ name: "test_event_7", category: "Other"})
 Event.create({ name: "test_event_7", category: "Meetup/Social"})
 
-Employee.create({ username: "chris", password: "12345", email: "chris@fakestartup.com", name: "Chris Brown", title: "Manager, Denver Devs", bio: "Find me cycling around Denver, writing code at @FakeStartUp, and hanging out with nerds at @Denver-Devs. Formerly of the @ctcidealab hacker space.", location_id: 2, manager_id: nil})
+Employee.create({ username: "chris", password: "12345", email: "chris@fakestartup.com", name: "Chris Brown", title: "Manager, Denver Devs", bio: "Find me cycling around Denver & writing code at @FakeStartUp.", location_id: 2, manager_id: nil})
 Employee.create({ username: "faruq", password: "12345", email: "faruq@fakestartup.com", name: "Faruq Rushdie", title: "Manager, Charlotte Devs", bio: "Faruq likes to do stuff", location_id: 1, manager_id: nil})
 Employee.create({ username: "sarah", password: "12345", email: "sarah@fakestartup.com", name: "Sarah  Abramov", title: "Manager, Remote Devs", bio: "Sarah may or may not exist in real life", location_id: 3, manager_id: nil})
 Employee.create({ username: "andre", password: "12345", email: "andre@fakestartup.com", name: "Andre Pohl", title: "Developer", bio: "Andre is tall and smart and nice", location_id: 2, manager_id:  1})
-Employee.create({ username: "jakob", password: "12345", email: "jakob@fakestartup.com", name: "Jakob Gentes", title: "Aspiring Developer", bio: "software engineering student at @flatiron-school. formerly of the @ctcidealab. also: sound maker. picture taker. yoga teacher. writing instructor. librarian.", location_id: 2, manager_id:  1})
+Employee.create({ username: "jakob", password: "12345", email: "jakob@fakestartup.com", name: "Jakob Gentes", title: "Developer", bio: "software engineer at @FakeStartUp.", location_id: 2, manager_id:  1})
 Employee.create({ username: "melanie", password: "12345", email: "dev@fakestartup.com", name: "Melanie Pham", title: "Developer", bio: "Melanie works remotely", location_id: 3, manager_id:  3})
 Employee.create({ username: "Fatima", password: "12345", email: "fatima@fakestartup.com", name: "Fatima Ruiz", title: "Developer", bio: "Fatima rides her bike around Charlotte", location_id: 3, manager_id:  2})
 
