@@ -65,7 +65,7 @@ class CommentsContainer extends React.Component {
     return (
       <div className="CommentsContainer">
         <h2>Comments</h2>
-        <ul>{this.commentsList()}</ul>
+        <ul className="CommentsList">{this.commentsList()}</ul>
           {
             this.state.editComment
             ? <div>
