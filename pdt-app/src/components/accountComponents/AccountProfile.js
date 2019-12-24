@@ -66,7 +66,7 @@ class AccountProfile extends React.Component {
   render() {
     return (
       <div className="AccountProfile">
-      <h1>Edit Your Account</h1>
+      <h2>Edit Your Account</h2>
       <form onSubmit={this.handleSubmit}>
 
         <label>Username</label>

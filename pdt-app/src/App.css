@@ -1,6 +1,6 @@
 body {
   font-family: 'Fira Sans', sans-serif;
-  /*background-color: #138A86;*/
+    min-width: 500px;
 }
 
 a {
@@ -55,10 +55,27 @@ input[type="submit"]:hover {
   padding: 1em;
 }
 
-.LearningList {
+.Home,
+.LearningLog,
+.NewEvent,
+.AccountProfile,
+.Login,
+.SignUp {
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  padding-bottom: 1em;
+}
+
+.LearningList, .NewEvent form, .AccountProfile form {
   text-align: left;
-  padding-left: 14em;
+  margin: 0 auto;
   list-style-type: none;
+  line-height: 1.5em;
+}
+
+.AccountProfile form {
+  line-height: 2em;
 }
 
 .Signin {
@@ -70,25 +87,12 @@ input[type="submit"]:hover {
   opacity: 93%;
 }
 
-.Login,
-.SignUp,
-.AccountProfile {
-  text-align: center;
-  padding-bottom: 1em;
-}
-
-.AccountProfile form {
-  text-align: left;
-  padding-left: 15em;
-  font-size: 1.15em;
-  line-height: 1.5em;
-}
-
 .Login form,
 .SignUp form {
   text-align: left;
-  padding-left: 7em;
-  font-size: 1.25em;
+  font-size: 1.15em;
+  margin: 0 auto;
+  line-height: 1.5em;
 }
 
 .Login input,
@@ -102,12 +106,6 @@ input[type="submit"]:hover {
 
 .Login h2, .SignUp h2 {
   border: none;
-}
-
-.NewEvent form {
-  text-align: left;
-  padding-left: 14em;
-  line-height: 1.25em;
 }
 
 .Footer {
@@ -128,7 +126,9 @@ input[type="submit"]:hover {
 }
 
 .TopNav {
+  display: flex;
   clear: right;
+  justify-content: center;
 }
 
 .Avatar {

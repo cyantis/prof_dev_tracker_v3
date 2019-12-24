@@ -37,7 +37,7 @@ class LearningLog extends React.Component {
     if(localStorage.getItem("isManager") === "true"){
       const eList = this.state.managerEmployeeList.filter(event => event.employees[0].manager_id == this.state.employeeId)
       return(
-        <div>
+        <div className="LearningLog">
         <h3>Your Team's Learning</h3>
         <div className="LearningList">
           <LearningEventList events={eList} employees={this.state.employees}/>
