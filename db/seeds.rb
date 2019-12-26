@@ -9,7 +9,7 @@ Event.create({ name: "test_event_6", category: "Tutorial"})
 Event.create({ name: "test_event_7", category: "Other"})
 Event.create({ name: "test_event_7", category: "Meetup/Social"})
 
-Employee.create({ username: "chris", password: "12345", email: "chris@fakestartup.com", name: "Chris Brown", title: "Manager, Denver Devs", bio: "Find me cycling around Denver & writing code at @FakeStartUp.", location_id: 2, manager_id: nil})
+Employee.create({ username: "chris", password: "12345", email: "chris@fakestartup.com", name: "Chris O'Neal", title: "Manager, Denver Devs", bio: "Find me cycling around Denver & writing code at @FakeStartUp.", location_id: 2, manager_id: nil})
 Employee.create({ username: "faruq", password: "12345", email: "faruq@fakestartup.com", name: "Faruq Rushdie", title: "Manager, Charlotte Devs", bio: "Faruq likes to do stuff", location_id: 1, manager_id: nil})
 Employee.create({ username: "sarah", password: "12345", email: "sarah@fakestartup.com", name: "Sarah  Abramov", title: "Manager, Remote Devs", bio: "Sarah may or may not exist in real life", location_id: 3, manager_id: nil})
 Employee.create({ username: "andre", password: "12345", email: "andre@fakestartup.com", name: "Andre Pohl", title: "Developer", bio: "Andre is tall and smart and nice", location_id: 2, manager_id:  1})
