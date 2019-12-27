@@ -3,10 +3,10 @@ import TopNav from './TopNav'
 
 const Header = () =>
   <div className="Header">
-    <h1>PROFESSIONAL DEVELOPMENT TRACKER</h1>
+    <a href='/home'><h1>PROFESSIONAL DEVELOPMENT TRACKER</h1></a>
     {window.location.href == "http://localhost:3000/login"
       ? null
-      : <TopNav /> 
+      : <TopNav />
     }
   </div>
 
