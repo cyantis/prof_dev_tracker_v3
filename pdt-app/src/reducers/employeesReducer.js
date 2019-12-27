@@ -1,4 +1,4 @@
-const employeesReducer = (state = [], action) => {
+const employeesReducer = (state = [{}], action) => {
   switch(action.type){
 
     case 'ADD_EMPLOYEES':
