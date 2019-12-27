@@ -1,4 +1,6 @@
 import React from 'react'
+import { connect } from 'react-redux'
+
 import LearningEventList from './LearningEventList'
 
 class Home extends React.Component {
@@ -28,4 +30,6 @@ class Home extends React.Component {
     )}
   }
 
-export default Home
+const mapStateToProps = ({ employees }) => ({ employees })
+
+export default connect(mapStateToProps)(Home)

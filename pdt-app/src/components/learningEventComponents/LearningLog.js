@@ -1,4 +1,6 @@
 import React from 'react'
+import { connect } from 'react-redux'
+
 import LearningEventList from './LearningEventList'
 
 class LearningLog extends React.Component {
@@ -7,7 +9,6 @@ class LearningLog extends React.Component {
     employeeId: localStorage.getItem("user_id"),
     events: [],
     managerEmployeeList: [],
-    employees: [],
   }
 
   async getEmployee() {
@@ -19,12 +20,6 @@ class LearningLog extends React.Component {
       bio: data.bio,
       events: data.events,
     })
-  }
-
-  async getEmployees() {
-    const response = await fetch(`/api/v1/employees`)
-    const data = await response.json()
-    this.setState({employees: data})
   }
 
   async getEvents() {
@@ -40,7 +35,7 @@ class LearningLog extends React.Component {
         <div className="LearningLog">
         <h3>Your Team's Learning</h3>
         <div className="LearningList">
-          <LearningEventList events={eList} employees={this.state.employees}/>
+          <LearningEventList events={eList} employees={this.props.employees}/>
         </div>
         </div>
       )
@@ -49,7 +44,6 @@ class LearningLog extends React.Component {
 
   componentDidMount() {
     this.getEmployee()
-    this.getEmployees()
     this.getEvents()
   }
 
@@ -68,4 +62,6 @@ class LearningLog extends React.Component {
   }
 }
 
-export default LearningLog
+const mapStateToProps = ({ employees }) => ({ employees })
+
+export default connect(mapStateToProps)(LearningLog)

@@ -32,7 +32,7 @@ class Main extends React.Component {
       <div className="Main">
         <ProfileMenu />
         <Router>
-          <Route path="/home" render={(props) => <Home employees={this.state.employees}/>} />
+          <Route path="/home" component={Home} />
           <Route exact path="/learning" component={LearningLog} />
           <Route exact path="/events/new" component={NewEvent} />
           <Route exact path="/events/:eventId/edit" component={EditEvent} />
@@ -47,10 +47,8 @@ class Main extends React.Component {
   }
 }
 
-const mapStateToProps = ({ employees }) => ({ employees })
-
 const mapDispatchToProps = dispatch => ({
   addEmployees: employees => dispatch({ type: 'ADD_EMPLOYEES', employees }),
 })
 
-export default connect(mapStateToProps, mapDispatchToProps)(Main)
+export default connect(null, mapDispatchToProps)(Main)
