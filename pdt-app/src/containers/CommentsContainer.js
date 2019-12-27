@@ -84,8 +84,8 @@ class CommentsContainer extends React.Component {
             : <a onClick={this.handleShow}><button>Add a Comment</button></a>
           }
       </div>
-    );
+    )
   }
-};
+}
 
 export default CommentsContainer
