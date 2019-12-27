@@ -1,5 +1,6 @@
 import React from 'react'
 import { BrowserRouter as Router, Route } from 'react-router-dom'
+import { connect } from 'react-redux'
 
 import AccountProfile from '../components/accountComponents/AccountProfile'
 import ProfileMenu from '../components/layoutComponents/ProfileMenu'
@@ -19,7 +20,7 @@ class Main extends React.Component {
   async getEmployees() {
     const response = await fetch(`/api/v1/employees`)
     const data = await response.json()
-    this.setState({employees: data})
+    this.props.addEmployees(data)
   }
 
   componentDidMount(){
@@ -45,4 +46,11 @@ class Main extends React.Component {
     )
   }
 }
-export default Main
+
+const mapStateToProps = ({ employees }) => ({ employees })
+
+const mapDispatchToProps = dispatch => ({
+  addEmployees: employees => dispatch({ type: 'ADD_EMPLOYEES', employees }),
+})
+
+export default connect(mapStateToProps, mapDispatchToProps)(Main)
