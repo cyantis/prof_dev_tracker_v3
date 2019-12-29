@@ -59,6 +59,7 @@ class LearningEvent extends React.Component {
     return (
       <div className="LearningEvent">
         <h1>{this.state.name}</h1>
+        <h3>{this.state.employees[0].name}</h3>
         <p>{this.state.date} | {this.state.category}</p>
         <p>{this.state.description}</p>
         <p><i>{this.shared()}</i></p>
