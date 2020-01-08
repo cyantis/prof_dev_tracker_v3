@@ -25,7 +25,7 @@ to install the Rails dependencies.
 
     $ npm install
 
-5. _PDT_ is setup to run with Heroku, which requires Yarn. Instructions for installing Yarn can be found here: https://yarnpkg.com/en/
+5. _PDT_ is setup to run with Heroku, which requires Yarn. Instructions for installing Yarn can be found [here](https://yarnpkg.com/en/) and for Heroku [here](https://devcenter.heroku.com/articles/heroku-cli).
 
 6. Launch a local server from the top-level directory by executing:
 
