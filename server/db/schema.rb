@@ -12,6 +12,9 @@
 
 ActiveRecord::Schema.define(version: 2019_12_06_020446) do
 
+  # These are extensions that must be enabled in order to support this database
+  enable_extension "plpgsql"
+
   create_table "comments", force: :cascade do |t|
     t.string "content"
     t.integer "employee_id"
@@ -21,8 +24,8 @@ ActiveRecord::Schema.define(version: 2019_12_06_020446) do
   end
 
   create_table "employee_events", force: :cascade do |t|
-    t.integer "employee_id"
-    t.integer "event_id"
+    t.bigint "employee_id"
+    t.bigint "event_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["employee_id"], name: "index_employee_events_on_employee_id"
@@ -63,4 +66,6 @@ ActiveRecord::Schema.define(version: 2019_12_06_020446) do
     t.datetime "updated_at", null: false
   end
 
+  add_foreign_key "employee_events", "employees"
+  add_foreign_key "employee_events", "events"
 end
