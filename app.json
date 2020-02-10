@@ -1,0 +1,15 @@
+{
+    "addons": ["heroku-postgresql"],
+    "buildpacks": [],
+    
+    "formation": {
+      "web": {
+        "quantity": 1
+      }
+    },
+    "name": "PDT",
+    "scripts": {
+      "postdeploy": "bundle exec rails db:schema:load db:seed"
+    },
+    "stack": "container"
+  }
